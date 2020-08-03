@@ -1,0 +1,70 @@
+body {
+    width: 100%;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+a {
+    color: black;
+}
+
+h1 {
+    font-size: 60px;
+    margin: 0;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+h3 {
+    font-size: 35px;
+}
+
+h4 {
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+}
+
+strong {
+    font-size: 18px;
+}
+
+p {
+    font-size: 15px;
+    color: rgb(105, 105, 105);
+}
+
+img {
+    width: 100%;
+}
+
+.headerContainer {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1000px;
+    align-items: center;
+}
+
+.avatar {
+    display: block;
+    border-radius: 200px;
+    box-sizing: border-box;
+    border: 3px solid #dfdfdf;
+}
+
+.avatarContainer {
+    flex: 1;
+    margin: 20px;
+}
+
+.detailsContainer {
+    flex: 2;
+    margin: 20px;
+}
+
+.bodyContainer {
+    flex: 1;
+    margin: auto;
+    padding-left: 20px;
+    max-width: 1250px;
+}
