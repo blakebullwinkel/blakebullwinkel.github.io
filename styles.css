@@ -8,7 +8,7 @@ a {
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 55px;
     margin: 0;
 }
 
@@ -35,14 +35,14 @@ img {
 
 .headerContainer {
     display: flex;
-    margin: 0 auto;
+    margin: auto;
     max-width: 1000px;
     align-items: center;
 }
 
 .avatar {
     border-radius: 200px;
-    max-width: 400px;
+    max-width: 350px;
     box-sizing: border-box;
     border: 1px solid black;
 }
