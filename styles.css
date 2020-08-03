@@ -13,16 +13,11 @@ h1 {
 }
 
 h2 {
-    font-size: 50px;
+    font-size: 45px;
 }
 
 h3 {
-    font-size: 35px;
-}
-
-h4 {
-    font-size: 20px;
-    margin: 10px 0 10px 0;
+    font-size: 30px;
 }
 
 strong {
@@ -46,10 +41,10 @@ img {
 }
 
 .avatar {
-    display: block;
     border-radius: 200px;
+    max-width: 400px;
     box-sizing: border-box;
-    border: 3px solid #dfdfdf;
+    border: 1px solid black;
 }
 
 .avatarContainer {
@@ -66,5 +61,17 @@ img {
     flex: 1;
     margin: auto;
     padding-left: 20px;
-    max-width: 1250px;
+    padding-right: 20px;
+    max-width: 1200px;
+}
+
+@media screen and (max-width: 575px) {
+    .headerContainer {
+        flex-direction: column;
+    }
+
+    .avatarContainer {
+        justify-content: center;
+    }
+
 }
