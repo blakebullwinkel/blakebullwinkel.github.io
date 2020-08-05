@@ -3,32 +3,93 @@
 <html>
   
 <head>
+    <meta charset="UTF-8">
     <title>Blake Bullwinkel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC">
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
-    <div class="headerContainer">
-        <div class="avatarContainer">
-            <img class="avatar" src="static/me.jpg" />
-        </div>
-        <div class="detailsContainer">
+    <header>
+        <img class="avatar" src="static/me.jpg" />
+        <div>
             <h1>Blake Bullwinkel</h1>
-            <a href="#">projects</a> |
+            <a href="#projects">projects</a> |
             <a href="static/cv.pdf" target="_blank">CV</a> |
             <a href="https://www.linkedin.com/in/blakebullwinkel/" target="_blank">linkedin</a> |
             <a href="https://github.com/blakebullwinkel" target="_blank">github</a> |
             <a href="https://medium.com/@jblake17" target="_blank">medium</a>
         </div>
+    </header>
+    <div class="wrapper">
+        <section>
+            <h2>Bio</h2>
+            <div class="bioContainer">
+                <p>Hi there! I'm a first-year grad student at Harvard pursuing a master's in Data Science at SEAS. We live in a world with many problems, but I believe that data science provides us with tools to address some of the most intractable among them. In particular, I have a passion for work that lies at the intersection of machine learning and climate change. This year, I look forward to connecting with students and faculty who are interested in exploring this interface further.</p>
+                <p>In the spring of 2020, I earned my BA from Williams College, where I double majored in math and Chinese. In my junior year, my studies took me across the pond to the University of Oxford. Before my undergraduate years, I lived overseas and grew up in Hong Kong, Singapore, and Sydney. If you have any questions, feel free to <a href="mailto:jbullwinkel@fas.harvard.edu">email</a> me.</p>
+            </div>
+            <h2 id="projects">Projects</h2>
+            <h3>Modeling Electricity Consumption in the US</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>Employed a multiple linear regression (MLR) model with normal errors to predict household electricity consumption in the US from various residential characteristics.</p>
+                    <p>Used R to conduct:</p>
+                    <ul>
+                        <li>Data cleaning and processing of nationally representative survey data from the US Energy Information Administration</li>
+                        <li>Exploratory data analysis of relevant continuous and categorical variables</li>
+                        <li>Variable selection using t-tests and partial F-tests, including consideration of possible interaction terms</li>
+                        <li>Model diagnostics and transformation of the response variable using a Box-Cox transform</li>
+                        <li>Confidence interval calculations for final MLR model coefficients</li>
+                    </ul>
+                    <a href="static/electricity-report.pdf" target="_blank">Full report</a>
+                    <br><a href="https://github.com/blakebullwinkel/electricity-consumption" target="_blank">R code</a>
+                </div>
+                <div class="projectElement">
+                    <img src="static/electricity-histograms.png" />
+                </div>
+            </div>
+            <h3>Early Epidemiological Model Parameters for COVID-19</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>Modeled early-stage COVID-19 case data in mainland China using a system of ordinary differential equations (SIR model) for senior undergraduate mathematics colloquium.</p>
+                    <p>Project and presentation included:</p>
+                    <ul>
+                        <li>Data cleaning and processing of daily epidemic reports from the Chinese National Health Commission to obtain time series data for susceptible, infected, and removed populations</li>
+                        <li>Data and model visualizations using seaborn Python library</li>
+                        <li>Model fitting using a Python script that minimizes the sum of squares between the model and the data</li>
+                        <li>Parameter extraction and estimation of average infectious period, basic reproduction number, and length of epidemic</li>
+                        <li>Epidemic simulation at Williams College using an expanded SIQR model to estimate critical rate of quarantine</li>
+                    </ul>
+                    <a href="static/covid-slides.pdf" target="_blank">Full report</a>
+                    <br><a href="#">Python code</a>
+                </div>
+                <div class="projectElement">
+                    <img src="static/covid-histograms.png" />
+                </div>
+            </div>
+            <h3>Using Linear Programming to Optimize Course Selection</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>Formulated course selection at Williams as a canonical linear programming (CLP) problem and used Google's OR-Tools Python package to solve by satisfying graduation requirements and user-indicated preferences while minimizing an objective function based on course reviews.</p>
+                    <p>Project and presentation included:</p>
+                    <ul>
+                        <li>Mathematical formulation of problem constraints including scheduling, credit, distribution, and study abroad requirements using binary indicator variables</li>
+                        <li>Data processing from multiple sources and parsing into self-defined 'Course' data structure</li>
+                        <li>Encoding of contraints listed above using OR-Tools for Python, as well as intended major requirements, course prerequisites, and preclusions</li>
+                        <li>Implementation of objective function that minimizes the percentage of course reviewers who "would not recommend the course to a friend"</li>
+                        <li>Jupyter Notebook for markdown document and class presentation</li>
+                    </ul>
+                    <a href="static/or-report.pdf" target="_blank">Full notebook</a>
+                    <br><a href="https://github.com/blakebullwinkel/course-optimization" target="_blank">Github repo</a>
+                </div>
+                <div class="projectElement">
+                    <img src="static/or-code.PNG" />
+                </div>
+            </div>
+        </section>
     </div>
-    <div class="bodyContainer">
-        <h2>Bio</h2>
-        <p>Hi there! I'm a first-year grad student at Harvard pursuing a master's in Data Science at SEAS. I believe that data science provides us with tools to address some of the world's most intractable issues and have a passion for work that lies at the intersection of machine learning and climate change.</p>
-        <p>In the spring of 2020, I earned my BA from Williams College, where I double majored in math and Chinese. If you have any questions, feel free to <a href="mailto:jbullwinkel@fas.harvard.edu">email</a> me.</p>
-        <h2 id="projects">Projects</h2>
-    </div>
+    <br>
 </body>
 
 </html>
