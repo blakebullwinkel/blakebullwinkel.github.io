@@ -36,65 +36,109 @@
         <section>
             <h2>Bio</h2>
             <div class="bioContainer">
-		    <p>Hi there! I'm a first-year grad student at Harvard pursuing a master's in Data Science at SEAS. We live in an uncertain world and face many hard questions, but I believe that data science can help us find answers to some of the most intractable among them. Some of the questions I'm using data to answer this semester include, "<a>Who will win the election?</a>" "<a>What is the relationship between climate change, wildfires, and public health?</a>" and "<a>How should we allocate wildfire response resources to affected regions?</a>"</p>
-                <p>When I'm not busy thinking about these questions, I devote my time to a project called <a href="https://getmarble.app/" target="_blank">Marble</a>, an eco-social app that provides users with environmental data in the form of carbon footprint estimates for their daily activities. I spent the summer designing and developing the app using React Native with a couple of friends. We can't say too much more just yet but are hoping to launch on the App Store and Google Play sometime in early 2021. Stay tuned!</p>
+                <p>I'm a first-year grad student at Harvard pursuing a master's in Data Science at <a href="https://iacs.seas.harvard.edu/" target="_blank">IACS</a>. I'm broadly interested in machine learning, and specifically in how learning methods can be applied to challenges in environmental sustainability. When I'm not busy with academic projects in this area, I work on <a href="https://getmarble.app/" target="_blank">Marble</a>, an eco-social app that provides users with environmental data in the form of carbon footprint estimates for their grocery purchases. Stay tuned!</p>
                 <p>In the spring of 2020, I earned my BA from Williams College, where I double majored in math and Chinese. In my junior year, my studies took me across the pond to the University of Oxford. Before my undergraduate years, I lived overseas and grew up in Hong Kong, Singapore, and Sydney. If you have any questions, feel free to <a href="mailto:jbullwinkel@fas.harvard.edu">email</a> me.</p>
             </div>
             <h2 id="projects">Projects</h2>
+            <h3>DreamDiff Python Package</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>I worked in a team of three to develop a Python package that implements forward-mode automatic differentiation, root-finding, optimization, and quadratic spline interpolation.</p>
+                    <ul>
+                        <li>Implemented forward-mode AD, which can evaluate and find the derivative of any single or multivariate function with scalar or vector inputs</li>
+                        <li>Enabled root-finding using Newton's method and a matplotlib animation method for algorithm visualization</li>
+                        <li>Added gradient descent, Nesterov's accelerated gradient descent, and animation methods to find and visualize local minima of functions</li>
+                        <li>Implemented quadratic spline interpolation to connect points via piecewise quadratic functions</li>
+                    </ul>
+                    <a href="https://github.com/autodiffdreamteam/cs107-FinalProject" target="_blank">GitHub repo</a>
+                    <br><a href="https://pypi.org/project/DreamDiff/1.0.1/" target="_blank">PyPI</a>
+                </div>
+                <div class="projectImage">
+                    <img src="static/grad-desc.gif" />
+                </div>
+            </div>
+            <h3>Analysis of Wildfires, Air Quality, and Public Health</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>I conducted time-series analysis in R to link spikes in PM2.5 concentration to specific wildfire events in California and used major axis regression to explore correlations between air quality and public health outcomes.</p>
+                    <ul>
+                        <li>Applied smoothing filters (Savitsky-Golay and penalized splines) to remove noise from PM2.5 concentration time-series</li>
+                        <li>Performed seasonal decomposition of time-series by loess (STL) to extract PM2.5 seasonal trends</li>
+                        <li>Used major axis regression (variant of OLS) to investigate relationship between PM2.5 concentration and prevalence of respiratory and cardiovascular diseases</li>
+                        <li>Bootstrapped the training data in order to generate 95% confidence intervals for model coefficients</li>
+                    </ul>
+                    <a href="static/eps-slides.pdf" target="_blank">Presentation</a>
+                    <br><a href="https://github.com/Camerajonas/EPS236-Wildfire-Project" target="_blank">R code</a>
+                </div>
+                <div class="projectImage">
+                    <img src="static/pm-season.png" />
+                </div>
+            </div>
+            <h3>Predicting Agricultural Crop Quality</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>For the 2020 PepsiCo Data Science Challenge, I built a variety of regression models (MLR, decision tree, random forest) to predict the quality of crops based on agricultural and weather data. My model and presentation won the <a href="https://www.nyas.org/challenges/data-science-in-research-development/?tab=winners%20%26%20finalists" target="_blank">grand prize</a> among 250+ contest participants.</p>
+                    <ul>
+                        <li>Used R for feature engineering to incorporate time-series weather data into the regression models</li>
+                        <li>Incorporated categorical predictors using one-hot encoding</li>
+                        <li>Applied a Yeo-Johnson transformation on the response variable to satisfy linear model assumptions</li>
+                        <li>Boosted predictive accuracy by tuning the hyperparameters of scikit-learn decision tree and random forest models using 10-fold cross-validation, achieving a final test R2 of 0.9815</li>
+                    </ul>
+                    <a href="static/pepsico-slides.pdf" target="_blank">Presentation</a>
+                    <br><a href="https://github.com/blakebullwinkel/pepsico-data-science" target="_blank">R & Python code</a>
+                </div>
+                <div class="projectImage">
+                    <img src="static/yeo-johnson.png" />
+                </div>
+            </div>
             <h3>Modeling Electricity Consumption in the US</h3>
             <div class="projectContainer">
                 <div class="projectElement">
-                    <p>Employed a multiple linear regression (MLR) model with normal errors to predict household electricity consumption in the US from various residential characteristics.</p>
-                    <p>Used R to conduct:</p>
+                    <p>I used R to build a multiple linear regression (MLR) model with normal errors to predict household electricity consumption in the US from various residential characteristics.</p>
                     <ul>
-                        <li>Data cleaning and processing of nationally representative survey data from the US Energy Information Administration</li>
-                        <li>Exploratory data analysis of relevant continuous and categorical variables</li>
-                        <li>Variable selection using t-tests and partial F-tests, including consideration of possible interaction terms</li>
-                        <li>Model diagnostics and transformation of the response variable using a Box-Cox transform</li>
-                        <li>Confidence interval calculations for final MLR model coefficients</li>
+                        <li>Cleaned and processed nationally representative survey data from the US Energy Information Administration</li>
+                        <li>Employed t-tests and partial F-tests to select significant continuous/categorical variables and interaction terms</li>
+                        <li>Checked model assumptions and transformed the response variable using a Box-Cox transform</li>
+                        <li>Conducted model inference by calculating 95% confidence intervals for the final variable coefficients</li>
                     </ul>
-                    <a href="static/electricity-report.pdf" target="_blank">Full report</a>
+                    <a href="static/electricity-report.pdf" target="_blank">Report</a>
                     <br><a href="https://github.com/blakebullwinkel/electricity-consumption" target="_blank">R code</a>
                 </div>
-                <div class="projectElement">
+                <div class="projectImage">
                     <img src="static/electricity-histograms.png" />
                 </div>
             </div>
             <h3>Early Epidemiological Model Parameters for COVID-19</h3>
             <div class="projectContainer">
                 <div class="projectElement">
-                    <p>Modeled early-stage COVID-19 case data in mainland China using a system of ordinary differential equations (SIR model) for senior undergraduate mathematics colloquium.</p>
-                    <p>Project and presentation included:</p>
+                    <p>For my senior colloquium at Williams, I modeled early-stage COVID-19 case data in mainland China using a system of ordinary differential equations (SIR model). My project won the 2020 Goldberg Prize for the best mathematics colloquium.</p>
                     <ul>
-                        <li>Data cleaning and processing of daily epidemic reports from the Chinese National Health Commission to obtain time series data for susceptible, infected, and removed populations</li>
-                        <li>Data and model visualizations using seaborn Python library</li>
-                        <li>Model fitting using a Python script that minimizes the sum of squares between the model and the data</li>
-                        <li>Parameter extraction and estimation of average infectious period, basic reproduction number, and length of epidemic</li>
-                        <li>Epidemic simulation at Williams College using an expanded SIQR model to estimate critical rate of quarantine</li>
+                        <li>Processed data from daily epidemic reports published by the Chinese National Health Commission to obtain time-series data for susceptible, infected, and removed populations</li>
+                        <li>Fitted the infected population equation to the time-series using a Python script that minimized the sum of squares between the model and the data</li>
+                        <li>Extracted key disease parameters and estimated the average infectious period, basic reproduction number, and length of epidemic</li>
+                        <li>Simulated a COVID-19 outbreak at Williams College using an expanded SIQR model to estimate critical rate of quarantine</li>
                     </ul>
-                    <a href="static/covid-slides.pdf" target="_blank">Full presentation</a>
+                    <a href="static/covid-slides.pdf" target="_blank">Presentation</a>
                     <br><a href="https://github.com/blakebullwinkel/covid-modeling" target="_blank">Python code</a>
                 </div>
-                <div class="projectElement">
+                <div class="projectImage">
                     <img src="static/covid-histograms.png" />
                 </div>
             </div>
             <h3>Using Linear Programming to Optimize Course Selection</h3>
             <div class="projectContainer">
                 <div class="projectElement">
-                    <p>Formulated course selection at Williams as a canonical linear programming (CLP) problem and used Google's OR-Tools Python package to solve by satisfying graduation requirements and user-indicated preferences while minimizing an objective function based on course reviews.</p>
-                    <p>Project and presentation included:</p>
+                    <p>I formulated course selection at Williams as a linear programming problem and used Google's OR-Tools Python package to solve by satisfying graduation requirements and user-indicated preferences while minimizing an objective function based on course reviews.</p>
                     <ul>
-                        <li>Mathematical formulation of problem constraints including scheduling, credit, distribution, and study abroad requirements using binary indicator variables</li>
-                        <li>Data processing from multiple sources and parsing into self-defined 'Course' data structure</li>
-                        <li>Encoding of contraints listed above using OR-Tools for Python, as well as intended major requirements, course prerequisites, and preclusions</li>
-                        <li>Implementation of objective function that minimizes the percentage of course reviewers who "would not recommend the course to a friend"</li>
-                        <li>Jupyter Notebook for markdown document and class presentation</li>
+                        <li>Mathematically represented problem constraints including scheduling, credit, distribution, and study abroad requirements using binary indicator variables</li>
+                        <li>Processed data from multiple sources and parsed into a self-defined 'Course' data structure</li>
+                        <li>Encoded linear contraints using OR-Tools for Python, as well as intended major requirements, course prerequisites, and preclusions</li>
+                        <li>Implemented a linear objective function that minimized the percentage of course reviewers who "would not recommend the course to a friend"</li>
                     </ul>
-                    <a href="static/or-report.pdf" target="_blank">Full notebook</a>
+                    <a href="static/or-report.pdf" target="_blank">Notebook</a>
                     <br><a href="https://github.com/blakebullwinkel/course-optimization" target="_blank">Github repo</a>
                 </div>
-                <div class="projectElement">
+                <div class="projectImage">
                     <img src="static/or-code.PNG" />
                 </div>
             </div>

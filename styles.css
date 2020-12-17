@@ -90,6 +90,12 @@ li {
     margin-bottom: 25px;
 }
 
+.projectImage {
+    flex: 1;
+    max-width: 550px;
+    margin-bottom: 25px;
+    filter:drop-shadow(0 0 10px grey);
+}
 
 @media screen and (max-width: 575px) {
     header {
