@@ -94,6 +94,14 @@ li {
     flex: 1;
     max-width: 550px;
     margin-bottom: 25px;
+    justify-content: center;
+    filter:drop-shadow(0 0 10px grey);
+}
+
+.smallProjectImage {
+    flex: 1;
+    max-width: 475px;
+    margin-bottom: 25px;
     filter:drop-shadow(0 0 10px grey);
 }
 

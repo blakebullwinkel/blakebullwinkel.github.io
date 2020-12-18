@@ -22,7 +22,7 @@
 
 <body>
     <header>
-        <img class="avatar" src="static/me.jpg" />
+        <img class="avatar" src="static/me1.jpeg"/>
         <div>
             <h1>Blake Bullwinkel</h1>
             <a href="#projects">projects</a> |
@@ -40,10 +40,44 @@
                 <p>In the spring of 2020, I earned my BA from Williams College, where I double majored in math and Chinese. In my junior year, my studies took me across the pond to the University of Oxford. Before my undergraduate years, I lived overseas and grew up in Hong Kong, Singapore, and Sydney. If you have any questions, feel free to <a href="mailto:jbullwinkel@fas.harvard.edu">email</a> me.</p>
             </div>
             <h2 id="projects">Projects</h2>
+            <h3>Wildfire Risk Prediction & Response Optimization in California</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>I trained tree-based classification models on historical wildfire and weather data to predict the fire risk for a given county and month in California and used mixed-integer programming to determine the optimal assignment of limited firefighters across the state based on total cost.</p>
+                    <ul>
+                        <li>Leveraged minority oversampling (SMOTE) on the training set to address imbalanced classes in the data and double the test set classification accuracy</li>
+                        <li>Determined the optimal combination of random forest hyperparameters (number of estimators and minimum samples per leaf node) based on out-of-bag (OOB) error rate</li>
+                        <li>Determined the optimal allocation of firefighters in each county and month by using a mixed-integer programming (MIP) solver to encode constraints on the number of available firefighters while minimizing total cost (based on cost of firefighters and fire damages)</li>
+                        <li>Evaluated algorithmic bias by comparing the optimized assignment of department-affiliated firefighters to inmate firefighters and estimating the added cost of California's wildfire response this year due to the impact of COVID-19 on the number of inmate firefighters available</li>
+                    </ul>
+                    <a href="static/ai-report.pdf" target="_blank">Report</a>
+                    <br><a href="https://github.com/teresadatta/CA-Wildfire-Risk-Prediction-and-Optimization" target="_blank">Python code</a>
+                </div>
+                <div class="smallProjectImage">
+                    <img src="static/wildfire-map.png" />
+                </div>
+            </div>
+            <h3>Predicting the Outcome of the 2020 Election</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>I built k-NN and regularized logistic regression models to predict the outcomes of the 2020 presidential and Congressional elections using historical, polling, and "fundamentals" data.</p>
+                    <ul>
+                        <li>Incorporated historical election data by deriving a "lagged fold-change" variable, defined as the % democratic / % republican votes in the previous election cycle </li>
+                        <li>Used 3-fold cross-validation to tune a k-NN model that predicts fold-change for presidential and Congressional elections</li>
+                        <li>Built LASSO and ridge-regularized logistic regression models to predict the election outcomes for a given state and year from polling and fundamentals data (GDP, approval rating, etc.)</li>
+                        <li>Evaluated model fairness by calculating false positive/negative rates and analyzed possible COVID-19 effects by using unemployment rates as a proxy</li>
+                    </ul>
+                    <a href="static/election-report.pdf" target="_blank">Report</a>
+                    <br><a href="" target="_blank">Python code</a>
+                </div>
+                <div class="projectImage">
+                    <img src="static/election-map.png" />
+                </div>
+            </div>
             <h3>DreamDiff Python Package</h3>
             <div class="projectContainer">
                 <div class="projectElement">
-                    <p>I worked in a team of three to develop a Python package that implements forward-mode automatic differentiation, root-finding, optimization, and quadratic spline interpolation.</p>
+                    <p>I worked in a team of three to develop a Python package that implements forward-mode automatic differentiation (AD), root-finding, optimization, and quadratic spline interpolation.</p>
                     <ul>
                         <li>Implemented forward-mode AD, which can evaluate and find the derivative of any single or multivariate function with scalar or vector inputs</li>
                         <li>Enabled root-finding using Newton's method and a matplotlib animation method for algorithm visualization</li>
@@ -53,7 +87,7 @@
                     <a href="https://github.com/autodiffdreamteam/cs107-FinalProject" target="_blank">GitHub repo</a>
                     <br><a href="https://pypi.org/project/DreamDiff/1.0.1/" target="_blank">PyPI</a>
                 </div>
-                <div class="projectImage">
+                <div class="smallProjectImage">
                     <img src="static/grad-desc.gif" />
                 </div>
             </div>
@@ -62,9 +96,9 @@
                 <div class="projectElement">
                     <p>I conducted time-series analysis in R to link spikes in PM2.5 concentration to specific wildfire events in California and used major axis regression to explore correlations between air quality and public health outcomes.</p>
                     <ul>
-                        <li>Applied smoothing filters (Savitsky-Golay and penalized splines) to remove noise from PM2.5 concentration time-series</li>
+                        <li>Applied smoothing filters (Savitsky-Golay and penalized splines) to remove noise from the PM2.5 concentration time-series</li>
                         <li>Performed seasonal decomposition of time-series by loess (STL) to extract PM2.5 seasonal trends</li>
-                        <li>Used major axis regression (variant of OLS) to investigate relationship between PM2.5 concentration and prevalence of respiratory and cardiovascular diseases</li>
+                        <li>Used major axis regression (variant of OLS) to investigate relationship between the PM2.5 concentration and prevalence of respiratory and cardiovascular diseases</li>
                         <li>Bootstrapped the training data in order to generate 95% confidence intervals for model coefficients</li>
                     </ul>
                     <a href="static/eps-slides.pdf" target="_blank">Presentation</a>
@@ -82,12 +116,12 @@
                         <li>Used R for feature engineering to incorporate time-series weather data into the regression models</li>
                         <li>Incorporated categorical predictors using one-hot encoding</li>
                         <li>Applied a Yeo-Johnson transformation on the response variable to satisfy linear model assumptions</li>
-                        <li>Boosted predictive accuracy by tuning the hyperparameters of scikit-learn decision tree and random forest models using 10-fold cross-validation, achieving a final test R2 of 0.9815</li>
+                        <li>Boosted predictive accuracy by tuning the hyperparameters of decision tree and random forest models using 10-fold cross-validation, achieving a final test R2 of 0.9815</li>
                     </ul>
                     <a href="static/pepsico-slides.pdf" target="_blank">Presentation</a>
                     <br><a href="https://github.com/blakebullwinkel/pepsico-data-science" target="_blank">R & Python code</a>
                 </div>
-                <div class="projectImage">
+                <div class="smallProjectImage">
                     <img src="static/yeo-johnson.png" />
                 </div>
             </div>
