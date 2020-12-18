@@ -36,8 +36,8 @@
         <section>
             <h2>Bio</h2>
             <div class="bioContainer">
-                <p>I'm a first-year grad student at Harvard pursuing a master's in Data Science at <a href="https://iacs.seas.harvard.edu/" target="_blank">IACS</a>. I'm broadly interested in machine learning, and specifically in how learning methods can be applied to challenges in environmental sustainability. When I'm not busy with academic projects in this area, I work on <a href="https://getmarble.app/" target="_blank">Marble</a>, an eco-social app that provides users with environmental data in the form of carbon footprint estimates for their grocery purchases. Stay tuned!</p>
-                <p>In the spring of 2020, I earned my BA from Williams College, where I double majored in math and Chinese. In my junior year, my studies took me across the pond to the University of Oxford. Before my undergraduate years, I lived overseas and grew up in Hong Kong, Singapore, and Sydney. If you have any questions, feel free to <a href="mailto:jbullwinkel@fas.harvard.edu">email</a> me.</p>
+                <p>I'm a first-year grad student at Harvard pursuing a master's in Data Science at <a href="https://iacs.seas.harvard.edu/" target="_blank">IACS</a>. I'm broadly interested in machine learning and, specifically, in how learning methods can be applied to challenges in environmental sustainability. When I'm not busy with academic projects in this area, I work on <a href="https://getmarble.app/" target="_blank">Marble</a>, an eco-social app that provides users with environmental data in the form of carbon footprint estimates for their grocery purchases. Stay tuned!</p>
+                <p>In the spring of 2020, I earned my BA from Williams College, where I double majored in math and Chinese. I also spent my junior year studying at the University of Oxford, and before my undergraduate years lived in Hong Kong, Singapore, and Sydney. If you have any questions, feel free to <a href="mailto:jbullwinkel@fas.harvard.edu">email</a> me.</p>
             </div>
             <h2 id="projects">Projects</h2>
             <h3>Wildfire Risk Prediction & Response Optimization in California</h3>
@@ -51,7 +51,7 @@
                         <li>Evaluated algorithmic bias by comparing the optimized assignment of department-affiliated firefighters to inmate firefighters and estimating the added cost of California's wildfire response this year due to the impact of COVID-19 on the number of inmate firefighters available</li>
                     </ul>
                     <a href="static/ai-report.pdf" target="_blank">Report</a>
-                    <br><a href="https://github.com/teresadatta/CA-Wildfire-Risk-Prediction-and-Optimization" target="_blank">Python code</a>
+                    <br><a href="https://github.com/teresadatta/CA-Wildfire-Risk-Prediction-and-Optimization" target="_blank">Notebooks & data</a>
                 </div>
                 <div class="smallProjectImage">
                     <img src="static/wildfire-map.png" />
@@ -60,15 +60,15 @@
             <h3>Predicting the Outcome of the 2020 Election</h3>
             <div class="projectContainer">
                 <div class="projectElement">
-                    <p>I built k-NN and regularized logistic regression models to predict the outcomes of the 2020 presidential and Congressional elections using historical, polling, and "fundamentals" data.</p>
+                    <p>I built k-NN and regularized logistic regression models to predict the outcomes of the 2020 presidential and congressional elections using historical, polling, and "fundamentals" data.</p>
                     <ul>
                         <li>Incorporated historical election data by deriving a "lagged fold-change" variable, defined as the % democratic / % republican votes in the previous election cycle </li>
-                        <li>Used 3-fold cross-validation to tune a k-NN model that predicts fold-change for presidential and Congressional elections</li>
+                        <li>Used 3-fold cross-validation to tune a k-NN model that predicts fold-change for presidential and congressional elections</li>
                         <li>Built LASSO and ridge-regularized logistic regression models to predict the election outcomes for a given state and year from polling and fundamentals data (GDP, approval rating, etc.)</li>
                         <li>Evaluated model fairness by calculating false positive/negative rates and analyzed possible COVID-19 effects by using unemployment rates as a proxy</li>
                     </ul>
                     <a href="static/election-report.pdf" target="_blank">Report</a>
-                    <br><a href="" target="_blank">Python code</a>
+                    <br><a href="https://github.com/blakebullwinkel/2020-Election-Prediction" target="_blank">Notebooks & data</a>
                 </div>
                 <div class="projectImage">
                     <img src="static/election-map.png" />
@@ -102,7 +102,7 @@
                         <li>Bootstrapped the training data in order to generate 95% confidence intervals for model coefficients</li>
                     </ul>
                     <a href="static/eps-slides.pdf" target="_blank">Presentation</a>
-                    <br><a href="https://github.com/Camerajonas/EPS236-Wildfire-Project" target="_blank">R code</a>
+                    <br><a href="https://github.com/Camerajonas/EPS236-Wildfire-Project" target="_blank">R code & data</a>
                 </div>
                 <div class="projectImage">
                     <img src="static/pm-season.png" />
@@ -111,7 +111,7 @@
             <h3>Predicting Agricultural Crop Quality</h3>
             <div class="projectContainer">
                 <div class="projectElement">
-                    <p>For the 2020 PepsiCo Data Science Challenge, I built a variety of regression models (MLR, decision tree, random forest) to predict the quality of crops based on agricultural and weather data. My model and presentation won the <a href="https://www.nyas.org/challenges/data-science-in-research-development/?tab=winners%20%26%20finalists" target="_blank">grand prize</a> among 250+ contest participants.</p>
+                    <p>For the 2020 PepsiCo Data Science Challenge, I built a variety of regression models (MLR, decision tree, random forest) to predict the quality of crops based on agricultural and weather data. I was honored to receive the <a href="https://www.nyas.org/challenges/data-science-in-research-development/?tab=winners%20%26%20finalists" target="_blank">grand prize</a> among 250+ contest participants.</p>
                     <ul>
                         <li>Used R for feature engineering to incorporate time-series weather data into the regression models</li>
                         <li>Incorporated categorical predictors using one-hot encoding</li>
@@ -119,7 +119,7 @@
                         <li>Boosted predictive accuracy by tuning the hyperparameters of decision tree and random forest models using 10-fold cross-validation, achieving a final test R2 of 0.9815</li>
                     </ul>
                     <a href="static/pepsico-slides.pdf" target="_blank">Presentation</a>
-                    <br><a href="https://github.com/blakebullwinkel/pepsico-data-science" target="_blank">R & Python code</a>
+                    <br><a href="https://github.com/blakebullwinkel/pepsico-data-science" target="_blank">R code & notebooks</a>
                 </div>
                 <div class="smallProjectImage">
                     <img src="static/yeo-johnson.png" />
@@ -136,7 +136,7 @@
                         <li>Conducted model inference by calculating 95% confidence intervals for the final variable coefficients</li>
                     </ul>
                     <a href="static/electricity-report.pdf" target="_blank">Report</a>
-                    <br><a href="https://github.com/blakebullwinkel/electricity-consumption" target="_blank">R code</a>
+                    <br><a href="https://github.com/blakebullwinkel/electricity-consumption" target="_blank">R code & data</a>
                 </div>
                 <div class="projectImage">
                     <img src="static/electricity-histograms.png" />
@@ -153,7 +153,7 @@
                         <li>Simulated a COVID-19 outbreak at Williams College using an expanded SIQR model to estimate critical rate of quarantine</li>
                     </ul>
                     <a href="static/covid-slides.pdf" target="_blank">Presentation</a>
-                    <br><a href="https://github.com/blakebullwinkel/covid-modeling" target="_blank">Python code</a>
+                    <br><a href="https://github.com/blakebullwinkel/covid-modeling" target="_blank">Python code & data</a>
                 </div>
                 <div class="projectImage">
                     <img src="static/covid-histograms.png" />
@@ -169,8 +169,8 @@
                         <li>Encoded linear contraints using OR-Tools for Python, as well as intended major requirements, course prerequisites, and preclusions</li>
                         <li>Implemented a linear objective function that minimized the percentage of course reviewers who "would not recommend the course to a friend"</li>
                     </ul>
-                    <a href="static/or-report.pdf" target="_blank">Notebook</a>
-                    <br><a href="https://github.com/blakebullwinkel/course-optimization" target="_blank">Github repo</a>
+                    <a href="static/or-report.pdf" target="_blank">Report</a>
+                    <br><a href="https://github.com/blakebullwinkel/course-optimization" target="_blank">Notebooks & data</a>
                 </div>
                 <div class="projectImage">
                     <img src="static/or-code.PNG" />
