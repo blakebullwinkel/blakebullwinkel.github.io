@@ -43,10 +43,10 @@
             <h3>Wildfire Risk Prediction & Response Optimization in California</h3>
             <div class="projectContainer">
                 <div class="projectElement">
-                    <p>I trained tree-based classification models on historical wildfire and weather data to predict the fire risk for a given county and month in California and used mixed-integer programming to determine the optimal assignment of limited firefighters across the state based on total cost.</p>
+                    <p>I trained tree-based classification models on historical wildfire and weather data to predict the fire risk for a given county and month in California and used mixed-integer programming to determine the optimal assignment of limited firefighters across the state, based on total cost.</p>
                     <ul>
                         <li>Leveraged minority oversampling (SMOTE) on the training set to address imbalanced classes in the data and double the test set classification accuracy</li>
-                        <li>Determined the optimal combination of random forest hyperparameters (number of estimators and minimum samples per leaf node) based on out-of-bag (OOB) error rate</li>
+                        <li>Tuned random forest hyperparameters (number of estimators and minimum samples per leaf node) using out-of-bag (OOB) error rate</li>
                         <li>Determined the optimal allocation of firefighters in each county and month by using a mixed-integer programming (MIP) solver to encode constraints on the number of available firefighters while minimizing total cost (based on cost of firefighters and fire damages)</li>
                         <li>Evaluated algorithmic bias by comparing the optimized assignment of department-affiliated firefighters to inmate firefighters and estimating the added cost of California's wildfire response this year due to the impact of COVID-19 on the number of inmate firefighters available</li>
                     </ul>
