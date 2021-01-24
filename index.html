@@ -36,10 +36,26 @@
         <section>
             <h2>Bio</h2>
             <div class="bioContainer">
-                <p>I'm a first-year grad student at Harvard pursuing a master's in Data Science at <a href="https://iacs.seas.harvard.edu/" target="_blank">IACS</a>. I'm broadly interested in machine learning and, specifically, in how learning methods can be applied to challenges in environmental sustainability. When I'm not busy with academic projects in this area, I work on <a href="https://getmarble.app/" target="_blank">Marble</a>, an eco-social app that provides users with environmental data in the form of carbon footprint estimates for their grocery purchases. Stay tuned!</p>
+                <p>I'm a first-year grad student at Harvard pursuing a master's in Data Science at <a href="https://iacs.seas.harvard.edu/" target="_blank">IACS</a>. I'm broadly interested in applications of machine learning, particularly to challenges in environmental sustainability. When I'm not busy with academic projects in this area, I work on <a href="https://getmarble.app/" target="_blank">Marble</a>, an eco-social app that provides users with environmental data in the form of carbon footprint estimates for their grocery purchases. Stay tuned!</p>
                 <p>In the spring of 2020, I earned my BA from Williams College, where I double majored in math and Chinese. I also spent my junior year studying at the University of Oxford, and before my undergraduate years lived in Hong Kong, Singapore, and Sydney. If you have any questions, feel free to <a href="mailto:jbullwinkel@fas.harvard.edu">email</a> me.</p>
             </div>
             <h2 id="projects">Projects</h2>
+            <h3>Woof Woof! Computer Vision & NLP App for Austin Pets Alive</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>For the <a href="https://www.computefest.seas.harvard.edu/">2021 IACS ComputeFest</a>, I attended workshops to build a web app that allows users to "chat" with and search for visually similar dogs in the Austin Pets Alive animal shelter by leveraging backend NLP and computer vision models.</p>
+                    <ul>
+                        <li>Generated image embeddings of dogs in the Austin Pets Alive database using EfficientNetB0 (lightweight CNN architecture) in TensorFlow</li>
+                        <li>Used FAISS (Facebook AI Similarity Search) to find images of dogs in the database that are visually similar to existing or user-uploaded images</li>
+                        <li>Created a dialog model by finetuning a pretrained GPT-2 with PERSONA-CHAT and text data specific to each dog</li>
+                        <li>Containerized the models in Docker and integrated a React frontend using a Kubernetes cluster</li>
+                    </ul>
+                    <a href="https://github.com/blakebullwinkel/woof-woof-app" target="_blank">GitHub repo</a>
+                </div>
+                <div class="projectImage">
+                    <img src="static/woofwoof.PNG" />
+                </div>
+            </div>
             <h3>Wildfire Risk Prediction & Response Optimization in California</h3>
             <div class="projectContainer">
                 <div class="projectElement">
