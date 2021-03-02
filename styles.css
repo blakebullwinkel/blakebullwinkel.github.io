@@ -91,18 +91,43 @@ li {
     margin-bottom: 25px;
 }
 
-.projectImage {
+.projectImage1 {
     flex: 1;
-    max-width: 500px;
+    max-width: 440px;
     margin-bottom: 25px;
     justify-content: center;
     filter:drop-shadow(0 0 10px grey);
 }
 
-.smallProjectImage {
+.projectImage2 {
     flex: 1;
-    max-width: 425px;
+    max-width: 370px;
     margin-bottom: 25px;
+    justify-content: center;
+    filter:drop-shadow(0 0 10px grey);
+}
+
+.projectImage3 {
+    flex: 1;
+    max-width: 475px;
+    margin-bottom: 25px;
+    justify-content: center;
+    filter:drop-shadow(0 0 10px grey);
+}
+
+.projectImage4 {
+    flex: 1;
+    max-width: 400px;
+    margin-bottom: 25px;
+    justify-content: center;
+    filter:drop-shadow(0 0 10px grey);
+}
+
+.projectImage5 {
+    flex: 1;
+    max-width: 420px;
+    margin-bottom: 25px;
+    justify-content: center;
     filter:drop-shadow(0 0 10px grey);
 }
 
