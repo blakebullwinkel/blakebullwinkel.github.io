@@ -1,9 +1,9 @@
 body {
     font-family: 'Roboto', sans-serif;
-    animation: transitionIn 0.6s;
+    animation: fadeIn 0.5s;
 }
 
-@keyframes transitionIn {
+@keyframes fadeIn {
     from {
         opacity: 0;
         transform: translateY(-10px);
