@@ -40,6 +40,23 @@
                 <p>In the spring of 2020, I earned my BA from Williams College, where I double majored in math and Chinese. I also spent my junior year studying at the University of Oxford, and before my undergraduate years lived in Hong Kong, Singapore, and Sydney. If you have any questions, feel free to <a href="mailto:jbullwinkel@fas.harvard.edu">email</a> me.</p>
             </div>
             <h2 id="projects">Projects</h2>
+            <h3>Linearized Neural Nets for Transfer Learning with GPs</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>I implemented the method for transfer learning proposed in <i>Fast Adaptation with Linearized Neural Networks</i>, a <a href="https://arxiv.org/pdf/2103.01439.pdf" target="_blank">2021 paper</a> by Maddox et al., in TensorFlow and performed experiments to test its practical utility.</p>
+                    <ul>
+                        <li>Constructed a GP kernel from the Jacobian of a trained neural net for transfer of the network's inductive biases</li>
+                        <li>Reproduced results on transfer learning tasks by developing a TensorFlow implementation of the paper's PyTorch model</li>
+                        <li>Showed that the proposed method works well when the training and adaptation data are similar and the number of adaptation points is small</li>
+                        <li>Demonstrated that better predictive performance can ofted be achieved using GPs with generic RBF kernels</li>
+                    </ul>
+                    <a href="static/linearized-nets-notebook.html" target="_blank">Notebook</a>
+                    <br><a href="https://github.com/blakebullwinkel/am207_final_project" target="_blank">GitHub repo</a>
+                </div>
+                <div class="projectImage2">
+                    <img src="static/gp-plot.png" />
+                </div>
+            </div>
             <h3>Classifying the Sounds of NYC</h3>
             <div class="projectContainer">
                 <div class="projectElement">
