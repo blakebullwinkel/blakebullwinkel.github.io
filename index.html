@@ -29,7 +29,7 @@
             <div class="col">
                 <h2>Blake Bullwinkel</h2>
                 <a href="static/resume.pdf" target="_blank">resume</a> • <a href="https://www.linkedin.com/in/blakebullwinkel/" target="_blank">linkedin</a> • <a href="https://github.com/blakebullwinkel" target="_blank">github</a> • <a href="https://medium.com/@blakebullwinkel" target="_blank">medium</a><br><br>
-                <p>Hi, I'm Blake. I recently completed a master's in Data Science at Harvard's <a href="https://iacs.seas.harvard.edu/" target="_blank">IACS</a>, where I was advised by <a href="https://iacs.seas.harvard.edu/people/pavlos-protopapas" target="_blank">Pavlos Protopapas</a>. I believe in the magic of machine learning to tackle really hard problems. My <a href="static/thesis.pdf" target="_blank">thesis</a> focused on using GANs to solve differential equations, but I've also done research in applied differential privacy and interpretability.</p>
+                <p>Hi, I'm Blake. I recently completed a master's in Data Science at Harvard's <a href="https://iacs.seas.harvard.edu/" target="_blank">IACS</a>, where I was advised by <a href="https://iacs.seas.harvard.edu/people/pavlos-protopapas" target="_blank">Pavlos Protopapas</a>. I believe in the magic of machine learning to tackle really hard problems. My <a href="static/thesis.pdf" target="_blank">thesis</a> focused on using GANs to solve differential equations, but I've also done research in differential privacy and interpretability.</p>
                 <p>I'm also passionate about applying computational tools to challenges in environmental sustainability and co-founded <a href="https://www.marblegroceries.com/" target="_blank">Marble</a>, an app that brings you carbon footprint estimates for your grocery purchases.</p>
                 <p>In the spring of 2020, I earned my BA from Williams College, where I double majored in math and Chinese. I spent my junior year studying at the University of Oxford, and before my undergraduate years lived in Hong Kong, Singapore, and Sydney. If you have any questions, feel free to <a href="mailto:jbullwinkel@fas.harvard.edu">email</a> me.</p>
             </div>
@@ -39,8 +39,8 @@
         <section>
             <h2>Publications</h2>
             <div class="bioContainer">
-                <p><b>Blake Bullwinkel</b>, Dylan Randle, Pavlos Protopapas, David Sondak, DEQGAN: Learning the Loss Function for PINNs with Generative Adversarial Networks, ICML AI4Science Workshop, 2022</p>
-                <p><b>Blake Bullwinkel</b>, Kristen Grabarz, Lily Ke, Scarlett Gong, Chris Tanner, Joshua Allen, <a href="https://arxiv.org/abs/2205.04321" target="_blank">Evaluating the Fairness Impact of Differentially Private Synthetic Data</a>, ICML Workshop on Theory and Practice of Differential Privacy, 2022</p>
+                <p><b>Blake Bullwinkel</b>, Dylan Randle, Pavlos Protopapas, David Sondak, <a href="static/deqgan_paper_ai4science.pdf" target="_blank">DEQGAN: Learning the Loss Function for PINNs with Generative Adversarial Networks</a>, ICML Workshop on AI for Science (AI4Science), 2022</p>
+                <p><b>Blake Bullwinkel</b>, Kristen Grabarz, Lily Ke, Scarlett Gong, Chris Tanner, Joshua Allen, <a href="https://arxiv.org/abs/2205.04321" target="_blank">Evaluating the Fairness Impact of Differentially Private Synthetic Data</a>, ICML Workshop on Theory and Practice of Differential Privacy (TPDP), 2022</p>
             </div>
             <h2 id="projects">Projects</h2>
             <h3>Linearized Neural Nets for Transfer Learning with GPs</h3>
@@ -90,7 +90,7 @@
             <h3>Forecasting and Classifying Mice Microbiomes</h3>
             <div class="projectContainer">
                 <div class="projectElement">
-                    <p>Used deep learning to forecast qPCR time series and classify mouse microbiomes into healthy and infected groups based on data provided by researchers at Women's and Brigham Hospital [<a href="static/microbiome-notebook.html" target="_blank">notebook</a>]</p>
+                    <p>Used deep learning to forecast qPCR time series and classify mouse microbiomes into healthy and infected groups based on data provided by researchers at Brigham and Women's Hospital [<a href="static/microbiome-notebook.html" target="_blank">notebook</a>]</p>
                     <ul>
                         <li>Trained autoregressive and LSTM models to predict the next qPCR reading (total bacteria concentration) based on lagged measurements</li>
                         <li>Used CNNs to predict with 98.05% test accuracy whether mice belonged to the healthy or infected group based on the relative abundances of taxa (ASV) at fixed time steps</li>
@@ -121,7 +121,7 @@
                 <div class="projectElement">
                     <p>I trained tree-based classification models on historical wildfire and weather data to predict the fire risk for a given county and month in California and used mixed-integer programming to determine the optimal assignment of limited firefighters across the state, based on total cost [<a href="static/ai-report.pdf" target="_blank">report</a>] [<a href="https://github.com/teresadatta/CA-Wildfire-Risk-Prediction-and-Optimization" target="_blank">code</a>]</p>
                     <ul>
-                        <li>Leveraged minority oversampling (SMOTE) on the training set to address imbalanced classes in the data and double the test set classification accuracy</li>
+                        <li>Leveraged minority oversampling (SMOTE) on the training set to address imbalanced classes in the data</li>
                         <li>Tuned random forest hyperparameters (number of estimators and minimum samples per leaf node) using out-of-bag (OOB) error rate</li>
                         <li>Determined the optimal allocation of firefighters in each county and month by using a mixed-integer programming (MIP) solver to encode constraints on the number of available firefighters while minimizing total cost (based on cost of firefighters and fire damages)</li>
                         <li>Evaluated algorithmic bias by comparing the optimized assignment of department-affiliated firefighters to inmate firefighters</li>
@@ -213,7 +213,7 @@
                         <li>Processed data from daily epidemic reports published by the Chinese National Health Commission</li>
                         <li>Fitted the model to the time series data using a Python script that minimized SSE</li>
                         <li>Extracted key disease parameters and estimated the average infectious period, basic reproduction number, and length of epidemic</li>
-                        <li>Simulated a COVID-19 outbreak at Williams College using an expanded SIQR model to estimate critical rate of quarantine</li>
+                        <li>Simulated a COVID-19 outbreak at Williams College using an expanded SIQR model to estimate the critical rate of quarantine</li>
                         <li>Won the 2020 Goldberg Prize for the best senior mathematics colloquium</li>
                     </ul>
                 </div>
