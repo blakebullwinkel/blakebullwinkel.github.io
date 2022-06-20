@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html>
+  
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174590144-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-174590144-1');
+    </script>
+    <meta charset="UTF-8">
+    <title>Blake Bullwinkel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio website for Blake Bullwinkel">
+    <meta name="keywords" content="blake bullwinkel,blake,bullwinkel,student,data science,machine learning,harvard,williams">
+    <meta name="author" content="Blake Bullwinkel">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <img class="avatar" src="static/me.JPG"/>
+        <div>
+            <h1>Blake Bullwinkel</h1>
+            <a href="#projects" style="font-size:18px">projects</a> <strong>|</strong>
+            <a href="static/resume.pdf" target="_blank" style="font-size:18px">resume</a> <strong>|</strong>
+            <a href="https://www.linkedin.com/in/blakebullwinkel/" target="_blank" style="font-size:18px">linkedin</a> <strong>|</strong>
+            <a href="https://github.com/blakebullwinkel" target="_blank" style="font-size:18px">github</a> <strong>|</strong>
+            <a href="https://medium.com/@blakebullwinkel" target="_blank" style="font-size:18px">medium</a>
+        </div>
+    </header>
+    <div class="wrapper">
+        <section>
+            <h2>Bio</h2>
+            <div class="bioContainer">
+		    <p>I'm a second-year grad student at Harvard pursuing a master's in Data Science at <a href="https://iacs.seas.harvard.edu/" target="_blank">IACS</a>. I believe in the magic of machine learning to tackle really hard problems, and I'm lucky enough to be doing that alongside <a href="https://iacs.seas.harvard.edu/people/pavlos-protopapas" target="_blank">Pavlos Protopapas</a> and <a href="https://dsondak.github.io/" target="_blank">David Sondak</a> through my thesis research on using GANs to solve partial differential equations. I'm also passionate about applying computational tools to challenges in environmental sustainability and devote much of my spare time to <a href="https://www.marblegroceries.com/" target="_blank">Marble</a>, a Harvard i-lab incubated startup bringing you carbon footprint estimates for your grocery purchases. (Coming soon!)</p>
+                <p>In the spring of 2020, I earned my BA from Williams College, where I double majored in math and Chinese. I also spent my junior year studying at the University of Oxford, and before my undergraduate years lived in Hong Kong, Singapore, and Sydney. If you have any questions, feel free to <a href="mailto:jbullwinkel@fas.harvard.edu">email</a> me.</p>
+            </div>
+            <h2 id="projects">Projects</h2>
+            <h3>Linearized Neural Nets for Transfer Learning with GPs</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>I implemented the method for transfer learning proposed in <i>Fast Adaptation with Linearized Neural Networks</i>, a <a href="https://arxiv.org/pdf/2103.01439.pdf" target="_blank">2021 paper</a> by Maddox et al., in TensorFlow and performed experiments to test its practical utility.</p>
+                    <ul>
+                        <li>Constructed a GP kernel from the Jacobian of a trained neural net for transfer of the network's inductive biases</li>
+                        <li>Reproduced results on transfer learning tasks by developing a TensorFlow implementation of the paper's PyTorch model</li>
+                        <li>Leveraged toy and real-world data to show that the proposed method works well when the training and adaptation data are similar and the number of adaptation points is small</li>
+                        <li>Demonstrated that better predictive performance can often be achieved using GPs with generic RBF kernels</li>
+                    </ul>
+                    <a href="static/linearized-nets-notebook.html" target="_blank">Notebook</a>
+                    <br><a href="https://github.com/blakebullwinkel/am207_final_project" target="_blank">GitHub repo</a>
+                </div>
+                <div class="projectImage2">
+                    <img src="static/gp-plot.png" />
+                </div>
+            </div>
+            <h3>Classifying the Sounds of NYC</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>I trained and tuned a variety of models to classify audio clips recorded around New York City from the UrbanSound8k dataset into ten different classes.</p>
+                    <ul>
+                        <li>Performed dimensionality reduction on 1-D amplitude and 2-D mel spectrogram data using PCA by keeping only the first 500 principal components</li>
+                        <li>Compared vanilla multinomial logistic regression with models that incorporated L2 regularization and class weighting</li>
+                        <li>Tuned hyperparameters via grid search to maximize the test accuracies of non-linear models, including k-NN and random forest</li>
+                        <li>Trained feed-forward and LSTM networks, experimenting with different model architectures and incorporating regularization using dropout</li>
+                    </ul>
+                    <a href="static/ml-report.pdf" target="_blank">Report</a>
+                    <br><a href="static/ml-notebook.html" target="_blank">Notebook</a>
+                </div>
+                <div class="projectImage1">
+                    <img src="static/mel-plot.png" />
+                </div>
+            </div>
+            <h3>Modeling ASA Section Membership</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>I constructed binary response generalized linear models to predict whether or not members of the American Statistical Association belonged to at least one section.</p>
+                    <ul>
+                        <li>Conducted exploratory data analysis and data pre-processing, adding binary indicators for variables with missing data and removing outliers</li>
+                        <li>Built a binary response GLM (logistic regression) model via analysis of deviance and ran model diagnostics, including a Hosmer-Lemeshow test and plots of averaged residuals and Cook's distances</li>
+                        <li>Fit a generalized additive model (GAM) with smooths over the continuous predictors to address concerns with lack of fit</li>
+                        <li>Interpreted the effects of the statistically significant GAM predictors and provided recommendations for the ASA that might boost section membership</li>
+                    </ul>
+                    <a href="static/glm-report.pdf" target="_blank">Report</a>
+                    <br><a href="https://github.com/yingchenliu98/stat149_final_project" target="_blank">R code & data</a>
+                </div>
+                <div class="projectImage5">
+                    <img src="static/gam-smooths.png" />
+                </div>
+            </div>
+            <h3>Forecasting and Classifying Mice Microbiomes</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>Using data provided by researchers at Women's and Brigham Hospital, I used deep learning to forecast qPCR time series and classify mouse microbiomes into healthy and infected groups.</p>
+                    <ul>
+                        <li>Trained autoregressive and LSTM models to predict the next qPCR reading (total bacteria concentration) based on lagged measurements</li>
+                        <li>Used CNNs to predict with 98.05% test accuracy whether mice belonged to the healthy or infected group based on the relative abundances of taxa (ASV) at fixed time steps</li>
+                        <li>Bootstrapped the data in order to train LSTMs on the entire history of ASV measurements for the same binary classification task</li>
+                        <li>Compared performance with a multivariate LSTM, which made predictions based on the relative abundances of every phylum</li>
+                    </ul>
+                    <a href="static/microbiome-notebook.html" target="_blank">Notebook</a>
+                </div>
+                <div class="projectImage5">
+                    <img src="static/qpcr.PNG" />
+                </div>
+            </div>
+            <h3>Woof Woof! Computer Vision & NLP App for Austin Pets Alive</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>For the <a href="https://www.computefest.seas.harvard.edu/">2021 IACS ComputeFest</a>, I attended workshops to build a web app that allows users to "chat" with and search for visually similar dogs in the Austin Pets Alive animal shelter by leveraging backend NLP and computer vision models.</p>
+                    <ul>
+                        <li>Generated image embeddings of dogs in the Austin Pets Alive database using EfficientNetB0 (lightweight CNN architecture) in TensorFlow</li>
+                        <li>Used FAISS (Facebook AI Similarity Search) to find images of dogs in the database that are visually similar to existing or user-uploaded images</li>
+                        <li>Created a dialog model by finetuning a pretrained GPT-2 with PERSONA-CHAT and text data specific to each dog</li>
+                        <li>Containerized the models in Docker and integrated a React frontend using a Kubernetes cluster</li>
+                    </ul>
+                    <a href="https://github.com/blakebullwinkel/woof-woof-app" target="_blank">GitHub repo</a>
+                </div>
+                <div class="projectImage1">
+                    <img src="static/woofwoof.PNG" />
+                </div>
+            </div>
+            <h3>Wildfire Risk Prediction & Response Optimization</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>I trained tree-based classification models on historical wildfire and weather data to predict the fire risk for a given county and month in California and used mixed-integer programming to determine the optimal assignment of limited firefighters across the state, based on total cost.</p>
+                    <ul>
+                        <li>Leveraged minority oversampling (SMOTE) on the training set to address imbalanced classes in the data and double the test set classification accuracy</li>
+                        <li>Tuned random forest hyperparameters (number of estimators and minimum samples per leaf node) using out-of-bag (OOB) error rate</li>
+                        <li>Determined the optimal allocation of firefighters in each county and month by using a mixed-integer programming (MIP) solver to encode constraints on the number of available firefighters while minimizing total cost (based on cost of firefighters and fire damages)</li>
+                        <li>Evaluated algorithmic bias by comparing the optimized assignment of department-affiliated firefighters to inmate firefighters and estimating the added cost of California's wildfire response this year due to the impact of COVID-19 on the number of inmate firefighters available</li>
+                    </ul>
+                    <a href="static/ai-report.pdf" target="_blank">Report</a>
+                    <br><a href="https://github.com/teresadatta/CA-Wildfire-Risk-Prediction-and-Optimization" target="_blank">Notebooks & data</a>
+                </div>
+                <div class="projectImage2">
+                    <img src="static/wildfire-map.png" />
+                </div>
+            </div>
+            <h3>Predicting the Outcome of the 2020 Election</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>I built k-NN and regularized logistic regression models to predict the outcomes of the 2020 presidential and congressional elections using historical, polling, and "fundamentals" data.</p>
+                    <ul>
+                        <li>Incorporated historical election data by deriving a "lagged fold-change" variable, defined as the % democratic / % republican votes in the previous election cycle </li>
+                        <li>Used 3-fold cross-validation to tune a k-NN model that predicts fold-change for presidential and congressional elections</li>
+                        <li>Built LASSO and ridge-regularized logistic regression models to predict the election outcomes for a given state and year from polling and fundamentals data (GDP, approval rating, etc.)</li>
+                        <li>Evaluated model fairness by calculating false positive/negative rates and analyzed possible COVID-19 effects by using unemployment rates as a proxy</li>
+                    </ul>
+                    <a href="static/election-report.pdf" target="_blank">Report</a>
+                    <br><a href="https://github.com/blakebullwinkel/2020-Election-Prediction" target="_blank">Notebooks & data</a>
+                </div>
+                <div class="projectImage3">
+                    <img src="static/election-map.png" />
+                </div>
+            </div>
+            <h3>DreamDiff Python Package</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>I worked in a team of three to develop a Python package that implements forward-mode automatic differentiation (AD), root-finding, optimization, and quadratic spline interpolation.</p>
+                    <ul>
+                        <li>Implemented forward-mode AD, which can evaluate and find the derivative of any single or multivariate function with scalar or vector inputs</li>
+                        <li>Enabled root-finding using Newton's method and a matplotlib animation method for algorithm visualization</li>
+                        <li>Added gradient descent, Nesterov's accelerated gradient descent, and animation methods to find and visualize local minima of functions</li>
+                        <li>Implemented quadratic spline interpolation to connect points via piecewise quadratic functions</li>
+                    </ul>
+                    <a href="https://github.com/autodiffdreamteam/cs107-FinalProject" target="_blank">GitHub repo</a>
+                    <br><a href="https://pypi.org/project/DreamDiff/1.0.1/" target="_blank">PyPI</a>
+                </div>
+                <div class="projectImage4">
+                    <img src="static/grad-desc.gif" />
+                </div>
+            </div>
+            <h3>Analysis of Wildfires, Air Quality, and Public Health</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>I conducted time series analysis in R to link spikes in PM2.5 concentration to specific wildfire events in California and used major axis regression to explore correlations between air quality and public health outcomes.</p>
+                    <ul>
+                        <li>Applied smoothing filters (Savitsky-Golay and penalized splines) to remove noise from the PM2.5 concentration time series</li>
+                        <li>Performed seasonal decomposition of time series by loess (STL) to extract PM2.5 seasonal trends</li>
+                        <li>Used major axis regression (variant of OLS) to investigate relationship between the PM2.5 concentration and prevalence of respiratory and cardiovascular diseases</li>
+                        <li>Bootstrapped the training data in order to generate 95% confidence intervals for model coefficients</li>
+                    </ul>
+                    <a href="static/eps-slides.pdf" target="_blank">Presentation</a>
+                    <br><a href="https://github.com/Camerajonas/EPS236-Wildfire-Project" target="_blank">R code & data</a>
+                </div>
+                <div class="projectImage3">
+                    <img src="static/pm-season.png" />
+                </div>
+            </div>
+            <h3>Predicting Agricultural Crop Quality</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>For the 2020 PepsiCo Data Science Challenge, I built a variety of regression models (MLR, decision tree, random forest) to predict the quality of crops based on agricultural and weather data. I was honored to receive the <a href="https://www.nyas.org/challenges/data-science-in-research-development/?tab=winners%20%26%20finalists" target="_blank">grand prize</a> among 250+ contest participants.</p>
+                    <ul>
+                        <li>Used R for feature engineering to incorporate time series weather data into the regression models</li>
+                        <li>Incorporated categorical predictors using one-hot encoding</li>
+                        <li>Applied a Yeo-Johnson transformation on the response variable to satisfy linear model assumptions</li>
+                        <li>Boosted predictive accuracy by tuning the hyperparameters of decision tree and random forest models using 10-fold cross-validation, achieving a final test R2 of 0.9815</li>
+                    </ul>
+                    <a href="static/pepsico-slides.pdf" target="_blank">Presentation</a>
+                    <br><a href="https://github.com/blakebullwinkel/pepsico-data-science" target="_blank">R code & notebooks</a>
+                </div>
+                <div class="projectImage4">
+                    <img src="static/yeo-johnson.png" />
+                </div>
+            </div>
+            <h3>Modeling Electricity Consumption in the US</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>I used R to build a multiple linear regression (MLR) model with normal errors to predict household electricity consumption in the US from various residential characteristics.</p>
+                    <ul>
+                        <li>Cleaned and processed nationally representative survey data from the US Energy Information Administration</li>
+                        <li>Employed t-tests and partial F-tests to select significant continuous/categorical variables and interaction terms</li>
+                        <li>Checked model assumptions and transformed the response variable using a Box-Cox transform</li>
+                        <li>Conducted model inference by calculating 95% confidence intervals for the final variable coefficients</li>
+                    </ul>
+                    <a href="static/electricity-report.pdf" target="_blank">Report</a>
+                    <br><a href="https://github.com/blakebullwinkel/electricity-consumption" target="_blank">R code & data</a>
+                </div>
+                <div class="projectImage4">
+                    <img src="static/electricity-histograms.png" />
+                </div>
+            </div>
+            <h3>Early Epidemiological Model Parameters for COVID-19</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>For my senior colloquium at Williams, I modeled early-stage COVID-19 case data in mainland China using a system of ordinary differential equations (SIR model). My project won the 2020 Goldberg Prize for the best mathematics colloquium.</p>
+                    <ul>
+                        <li>Processed data from daily epidemic reports published by the Chinese National Health Commission to obtain time series data for susceptible, infected, and removed populations</li>
+                        <li>Fitted the infected population equation to the time series using a Python script that minimized the sum of squares between the model and the data</li>
+                        <li>Extracted key disease parameters and estimated the average infectious period, basic reproduction number, and length of epidemic</li>
+                        <li>Simulated a COVID-19 outbreak at Williams College using an expanded SIQR model to estimate critical rate of quarantine</li>
+                    </ul>
+                    <a href="static/covid-slides.pdf" target="_blank">Presentation</a>
+                    <br><a href="https://github.com/blakebullwinkel/covid-modeling" target="_blank">Python code & data</a>
+                </div>
+                <div class="projectImage5">
+                    <img src="static/covid-histograms.png" />
+                </div>
+            </div>
+            <h3>Using Linear Programming to Optimize Course Selection</h3>
+            <div class="projectContainer">
+                <div class="projectElement">
+                    <p>I formulated course selection at Williams as a linear programming problem and used Google's OR-Tools Python package to solve by satisfying graduation requirements and user-indicated preferences while minimizing an objective function based on course reviews.</p>
+                    <ul>
+                        <li>Mathematically represented problem constraints including scheduling, credit, distribution, and study abroad requirements using binary indicator variables</li>
+                        <li>Processed data from multiple sources and parsed into a self-defined 'Course' data structure</li>
+                        <li>Encoded linear contraints using OR-Tools for Python, as well as intended major requirements, course prerequisites, and preclusions</li>
+                        <li>Implemented a linear objective function that minimized the percentage of course reviewers who "would not recommend the course to a friend"</li>
+                    </ul>
+                    <a href="static/or-report.pdf" target="_blank">Report</a>
+                    <br><a href="https://github.com/blakebullwinkel/course-optimization" target="_blank">Notebooks & data</a>
+                </div>
+                <div class="projectImage5">
+                    <img src="static/or-code.PNG" />
+                </div>
+            </div>
+        </section>
+    </div>
+    <br>
+    <footer>
+      <p>© 2022 Blake Bullwinkel</p>
+    </footer>
+</body>
+
+</html>
