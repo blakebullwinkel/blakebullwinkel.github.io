@@ -15,18 +15,24 @@ body {
     }
 }
 
-header {
+.intro {
     width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-bottom: 10px;
+    margin-top: 50px;
+}
+
+.col {
+    flex: 1;
+}
+
+.centeredcol {
+    flex: 1;
+    text-align: center;
 }
 
 section {    
-    max-width: 1000px;
+    max-width: 800px;
     margin-left: 15px;
     margin-right: 15px;
 }
@@ -47,11 +53,11 @@ h1 {
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 25px;
 }
 
 h3 {
-    font-size: 25px;
+    font-size: 18px;
 }
 
 strong {
@@ -60,7 +66,7 @@ strong {
 
 p {
     font-size: 16px;
-    color: rgb(105, 105, 105);
+    color: rgb(128, 128, 128);
 }
 
 img {
@@ -74,17 +80,17 @@ li {
 }
 
 .avatar {
+    margin-top: -3px;
     border-radius: 200px;
     max-width: 250px;
-    border: 1px solid black;
-    
+    filter:drop-shadow(0 0 3px grey);
+
 }
 
 .wrapper {
     width: 100%;
     display: flex;
     justify-content: center;
-    
 }
 
 .bioContainer {
@@ -106,46 +112,54 @@ li {
 
 .projectImage1 {
     flex: 1;
-    max-width: 440px;
+    max-width: 410px;
     margin-bottom: 25px;
     justify-content: center;
-    filter:drop-shadow(0 0 10px grey);
+    filter:drop-shadow(0 0 3px grey);
 }
 
 .projectImage2 {
     flex: 1;
-    max-width: 370px;
+    max-width: 350px;
     margin-bottom: 25px;
     justify-content: center;
-    filter:drop-shadow(0 0 10px grey);
+    filter:drop-shadow(0 0 3px grey);
 }
 
 .projectImage3 {
     flex: 1;
-    max-width: 475px;
+    max-width: 455px;
     margin-bottom: 25px;
     justify-content: center;
-    filter:drop-shadow(0 0 10px grey);
+    filter:drop-shadow(0 0 3px grey);
 }
 
 .projectImage4 {
     flex: 1;
-    max-width: 400px;
+    max-width: 360px;
     margin-bottom: 25px;
     justify-content: center;
-    filter:drop-shadow(0 0 10px grey);
+    filter:drop-shadow(0 0 3px grey);
 }
 
 .projectImage5 {
     flex: 1;
-    max-width: 420px;
+    max-width: 380px;
     margin-bottom: 25px;
     justify-content: center;
-    filter:drop-shadow(0 0 10px grey);
+    filter:drop-shadow(0 0 3px grey);
+}
+
+.projectImage6 {
+    flex: 1;
+    max-width: 330px;
+    margin-bottom: 25px;
+    justify-content: center;
+    filter:drop-shadow(0 0 3px grey);
 }
 
 @media screen and (max-width: 575px) {
-    header {
+    .intro {
         flex-direction: column;
     }
 
