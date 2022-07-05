@@ -57,6 +57,11 @@ h2 {
     font-size: 28px;
 }
 
+.name h2 {
+    font-size: 28px;
+    margin-bottom: 0;
+}
+
 h3 {
     font-size: 18px;
 }
