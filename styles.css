@@ -207,9 +207,9 @@ a:hover {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) { */
   /* The following was 99% written by GitHub Copilot. */
-  body {
+  /* body {
     background: #222;
     color: #fff;
   }
@@ -245,4 +245,4 @@ a:hover {
     filter: invert(50%);
     -webkit-filter: invert(50%);
   }
-}
+} */
