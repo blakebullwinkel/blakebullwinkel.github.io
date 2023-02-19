@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Math Notes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="icon" type="image/png" href="/static/marble.png"> -->
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+  <h1>Math Notes</h1>
+  <p>
+    I am currently working through the <a href="https://mml-book.com">
+    Mathematics for Machine Learning</a> textbook by Deisenroth et al. 
+    and use this space to summarize my notes. If you find any mistakes,
+    please let me know!
+  </p>
+
+  <h2>Linear Algebra</h2>
+  <p>
+    A system of linear equations can be compactly represented by 
+    \(A \boldsymbol{x} = \boldsymbol{b}\) and will either have no 
+    solutions, exactly one solution, or infinitely many solutions. 
+    For example, the system
+
+    $$
+    \begin{aligned}
+    x_1 + x_2 + x_3 &= 3 \\
+    x_1 - x_2 + 2x_3 &= 2 \\
+    2x_1 + 3x_3 &= 5
+    \end{aligned}
+    $$
+
+    can be written as 
+
+    $$
+    \begin{bmatrix}
+    1 & 1 & 1 \\
+    1 & -1 & 2 \\
+    2 & 0 & 3
+    \end{bmatrix}
+    \begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    x_3
+    \end{bmatrix} = 
+    \begin{bmatrix}
+    3 \\
+    2 \\
+    5
+    \end{bmatrix}
+    $$
+    Gaussian elimination is an algorithm that enables us to solve
+    these systems by putting the matrix \(A\) into row echelon form
+    or (better yet) <i>reduced</i> row echelon form. In this example, we would 
+    construct the augmented matrix 
+    
+    $$
+    \left[\begin{array}{rrr|r}
+    1 & 1 & 1 & 3 \\
+    1 & -1 & 2 & 2 \\
+    2 & 0 & 3 & 5
+    \end{array}\right]
+    $$
+
+    and perform elementary row operations until we obtain
+
+    $$
+    \left[\begin{array}{rrr|r}
+    1 & 0 & \frac{3}{2} & \frac{5}{2} \\
+    0 & 1 & -\frac{1}{2} & \frac{1}{2} \\
+    0 & 0 & 0 & 0
+    \end{array}\right],
+    $$
+
+  which tells us that \(x_1+\frac{3}{2}x_3 = \frac{5}{2}\) and 
+  \(x_2-\frac{1}{2}x_3 = \frac{1}{2}\). In this case, we have 
+  only two equations with three unknowns, so we introduce a 
+  free variable \(t=x_3\). Solving for \(x_1\) and \(x_2\), we 
+  obtain 
+
+    $$
+    \begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    x_3
+    \end{bmatrix} = 
+    \begin{bmatrix}
+    \frac{5-3t}{2} \\
+    \frac{1+t}{2} \\
+    t
+    \end{bmatrix}
+    $$
+    where \(t \in \mathbb{R}\). Therefore, this system has infinitely 
+    many solutions.
+  </p>
+  <p>
+    For a more intuitive understanding of what is happening here, it
+    is helpful to remember that \(A \in \mathbb{R}^{m \times n} \) 
+    represents a linear transformation of space from 
+    \( \mathbb{R}^n \rightarrow \mathbb{R}^m \).
+  </p>
+  <!-- <p>
+    The columns of \(A\) tell us where the basis 
+    vectors land after that transformation is applied. In the example above, \(A \in \mathbb{R}^{3 \times 3}\) is a linear
+    transformation that takes the standard basis vectors \(\boldsymbol{e}_1, 
+    \boldsymbol{e}_2, \boldsymbol{e}_3\) to \( [1,1,2]^\top, [1,-1,0]^\top, 
+    [1,2,3]^\top\).
+  </p> -->
+</body>
