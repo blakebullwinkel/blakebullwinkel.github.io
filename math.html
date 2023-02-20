@@ -92,22 +92,73 @@
     \frac{5-3t}{2} \\
     \frac{1+t}{2} \\
     t
+    \end{bmatrix} = 
+    \begin{bmatrix}
+    \frac{5}{2} \\
+    \frac{1}{2} \\
+    0
+    \end{bmatrix} + t
+    \begin{bmatrix}
+    \frac{-3}{2} \\
+    \frac{1}{2} \\
+    1
     \end{bmatrix}
     $$
     where \(t \in \mathbb{R}\). Therefore, this system has infinitely 
-    many solutions.
+    many solutions. Recognizing that this solution describes a line
+    in \(\mathbb{R}^3\), we can imagine that there is an infinite line
+    of solutions that satisfy our equation.
   </p>
   <p>
-    For a more intuitive understanding of what is happening here, it
+    For a more intuitive understanding of what that means, it
     is helpful to remember that \(A \in \mathbb{R}^{m \times n} \) 
-    represents a linear transformation of space from 
-    \( \mathbb{R}^n \rightarrow \mathbb{R}^m \).
+    represents a linear transformation \( T(\boldsymbol{x}): \mathbb{R}^n 
+    \rightarrow \mathbb{R}^m \). In other words, the equation 
+    \(A\boldsymbol{x} = \boldsymbol{b}\) is really asking, "what vector 
+    \(\boldsymbol{x}\) will land on \(\boldsymbol{b}\) after the 
+    transformation \(A\) is applied?" Our solution says that an infinite 
+    line of vectors will land on the vector \(\boldsymbol{b}\).
   </p>
-  <!-- <p>
-    The columns of \(A\) tell us where the basis 
-    vectors land after that transformation is applied. In the example above, \(A \in \mathbb{R}^{3 \times 3}\) is a linear
-    transformation that takes the standard basis vectors \(\boldsymbol{e}_1, 
-    \boldsymbol{e}_2, \boldsymbol{e}_3\) to \( [1,1,2]^\top, [1,-1,0]^\top, 
-    [1,2,3]^\top\).
-  </p> -->
+  <p>
+    Without introducing some additional concepts, I find it hard to 
+    visualize how that happens. For a deeper understanding, let's talk
+    about column space, linear independence, and determinants.
+  </p>
+  <p>
+    Everything you need to know about a transformation matrix is 
+    contained within its column vectors. As Grant Sanderson engrained 
+    in my memory through his highly acclaimed 
+    <a href="https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">Essence of linear 
+    algebra</a>, the column vectors of a matrix tell us where the
+    standard basis vectors will land after the transformation matrix 
+    is applied. 
+  </p>
+  <p>  
+    In the example above, \(A \in \mathbb{R}^{3 \times 3}\) is a linear
+    transformation that maps the standard basis vectors 
+    \(\boldsymbol{e}_1=[1,0,0]^\top, \boldsymbol{e}_2=[0,1,0]^\top, 
+    \boldsymbol{e}_3=[0,0,1]^\top \) to \( [1,1,2]^\top, [1,-1,0]^\top, 
+    [1,2,3]^\top\). This doesn't provide much in the way of visual intuition,
+    but we're getting there.
+  </p>
+  <p>
+    A set of vectors \(\boldsymbol{v}_1,\boldsymbol{v}_2,\dots 
+    \boldsymbol{v}_k\) is said to be linearly independent if the 
+    equality
+
+    $$
+    c_1 \boldsymbol{v}_1 + c_2 \boldsymbol{v}_2 + \dots + c_k 
+    \boldsymbol{v}_k = \boldsymbol{0}
+    $$
+
+    is only true for \(c_1=c_2=\dots=c_k=0\). What the heck does this 
+    mean? It means that we can't write any of the vectors \(\boldsymbol{v}_1,
+    \boldsymbol{v}_2,\dots \boldsymbol{v}_k\) as a linear combination of 
+    the others. If we could, then we would say that this set of vectors 
+    is linearly <i>dependent</i>.
+  </p>
+  <p>
+    Let's think about how this is relevant to understanding a transformation 
+    matrix \(A\).
+  </p>
 </body>
