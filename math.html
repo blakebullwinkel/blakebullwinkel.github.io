@@ -122,27 +122,105 @@
   </p>
   <p>
     Without introducing some additional concepts, I find it hard to 
-    visualize how exactly this happens. For a deeper understanding, 
-    let's focus for a while on just the matrix \(A\). I'm going to 
-    introduce a lot of definitions, so bear with me. We will emerge 
-    from all the jargon with a much more general understanding.
-  </p>
-  <p>
-    Everything you need to know about a transformation matrix is 
-    contained within its column vectors. As Grant Sanderson engrained 
-    in my memory through his highly acclaimed 
-    <a href="https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">Essence of linear 
-    algebra</a> series, the column vectors of a matrix tell us where the
-    standard basis vectors will land after the transformation matrix 
-    is applied. 
+    visualize how this happens. Let's dig a little deeper by thinking for a 
+    moment about just an arbitrary vector \([x_1,x_2,x_3]^\top \in \mathbb{R}^3\).
+    Another way to express this vector is as a linear combination of three 
+    more fundamental vectors:
+    $$
+    \begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    x_3
+    \end{bmatrix} = x_1
+    \begin{bmatrix}
+    1 \\
+    0 \\
+    0
+    \end{bmatrix} + x_2
+    \begin{bmatrix}
+    0 \\
+    1 \\
+    0
+    \end{bmatrix} + x_3
+    \begin{bmatrix}
+    0 \\
+    0 \\
+    1
+    \end{bmatrix}
+    $$
   </p>
   <p>  
-    In the example above, \(A \in \mathbb{R}^{3 \times 3}\) is a linear
-    transformation that maps the standard basis vectors 
+    These vectors
     \(\boldsymbol{e}_1=[1,0,0]^\top, \boldsymbol{e}_2=[0,1,0]^\top, 
-    \boldsymbol{e}_3=[0,0,1]^\top \) to \( [1,1,2]^\top, [1,-1,0]^\top, 
-    [1,2,3]^\top\). This doesn't provide much in the way of visual intuition,
-    but we're getting there.
+    \boldsymbol{e}_3=[0,0,1]^\top \) are called standard basis vectors.
+    Going back to our example above, the matrix \(A \in \mathbb{R}^3\)
+    represents a linear transformation \(T(\boldsymbol{x}):\mathbb{R}^3
+    \rightarrow \mathbb{R}^3\). In other words, \(A\) maps every vector in 
+    \(\mathbb{R}^3\) to a new vector in \(\mathbb{R}^3\), including the 
+    standard basis vectors. Because the transformation is <i>linear</i>,
+    we can write that 
+    $$
+    T\left(\begin{bmatrix}
+      x_1 \\
+      x_2 \\
+      x_3
+      \end{bmatrix}
+    \right) =
+    x_1 T\left(
+      \begin{bmatrix}
+      1 \\
+      0 \\
+      0
+      \end{bmatrix}
+    \right) +
+    x_2 T\left(
+      \begin{bmatrix}
+      0 \\
+      1 \\
+      0
+      \end{bmatrix}
+    \right) +
+    x_3 T\left(
+      \begin{bmatrix}
+      0 \\
+      0 \\
+      1
+      \end{bmatrix}
+    \right)
+    $$
+  </p>
+  <p>
+    This tells us that the transformed version of any vector 
+    \([x_1,x_2,x_3]^\top\) can be found by scaling the <i>transformed</i>
+    standard basis vectors by \(x_1, x_2, x_3\) and adding them up.
+    Therefore, all the information about \(T(\boldsymbol{x})\) is encoded by
+    the transformed versions of the standard basis vectors. Given that 
+    \(T(\boldsymbol{x})\) is also described by the matrix multiplication 
+    \(A\boldsymbol{x}\), it follows from the above that the columns of \(A\)
+    are precisely the transformed standard basis vectors.
+  </p>
+  <p>
+    In our example above, therefore, the transformation matrix 
+    $$
+    A = 
+    \begin{bmatrix}
+    1 & 1 & 1 \\
+    1 & -1 & 2 \\
+    2 & 0 & 3
+    \end{bmatrix}
+    $$
+    maps the standard basis vectors to \([1,1,2]^\top, [1,-1,0]^\top, 
+    [1,2,3]^\top \), and transforms the rest of space in such a way 
+    that an infinite line of vectors is mapped onto 
+    \(\boldsymbol{b}=[3,2,5]^\top\) (see the solution we derived in 
+    the example above). 
+  </p>
+  <p>
+    You might be wondering, why did we get infinitely many solutions?
+    When would we have no solutions, or exactly one solution, and what 
+    would that mean, visually? For this, we need to define a number of 
+    concepts, including vector spaces, linear (in)dependence, span, and 
+    bases...[to be continued].
   </p>
   <p>
     A set of vectors \(\boldsymbol{v}_1,\boldsymbol{v}_2,\dots 
