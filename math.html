@@ -121,8 +121,7 @@
     line of vectors will land on the vector \(\boldsymbol{b}\).
   </p>
   <p>
-    Without introducing some additional concepts, I find it hard to 
-    visualize how this happens. Let's dig a little deeper by thinking for a 
+    Let's dig a little deeper by thinking for a 
     moment about just an arbitrary vector \([x_1,x_2,x_3]^\top \in \mathbb{R}^3\).
     Another way to express this vector is as a linear combination of three 
     more fundamental vectors:
@@ -210,36 +209,94 @@
     \end{bmatrix}
     $$
     maps the standard basis vectors to \([1,1,2]^\top, [1,-1,0]^\top, 
-    [1,2,3]^\top \), and transforms the rest of space in such a way 
-    that an infinite line of vectors is mapped onto 
-    \(\boldsymbol{b}=[3,2,5]^\top\) (see the solution we derived in 
-    the example above). 
+    [1,2,3]^\top \) and, as we found in the example above, it maps 
+    an infinite line of vectors onto \(\boldsymbol{b}=[3,2,5]^\top\).
   </p>
   <p>
     You might be wondering, why did we get infinitely many solutions?
-    When would we have no solutions, or exactly one solution, and what 
-    would that mean, visually? For this, we need to define a number of 
-    concepts, including vector spaces, linear (in)dependence, span, and 
-    bases...[to be continued].
+    When would we have no solutions, or exactly one solution? To answer
+    these questions, it will be helpful to define a number of concepts, 
+    including vector spaces, linear (in)dependence, span, and bases.
   </p>
   <p>
-    A set of vectors \(\boldsymbol{v}_1,\boldsymbol{v}_2,\dots 
-    \boldsymbol{v}_k\) is said to be linearly independent if the 
-    equality
+    Let's start with vector spaces. A real-valued vector space \(V\) is a set 
+    of vectors with two operations: addition between two vectors, and 
+    multiplication between a vector and a scalar.
+  </p>
+  <p>
+    Consider a set of vectors \(\boldsymbol{v}_1,\boldsymbol{v}_2,\dots 
+    \boldsymbol{v}_k \in V\). These vectors are said to be linearly 
+    independent if
 
     $$
     c_1 \boldsymbol{v}_1 + c_2 \boldsymbol{v}_2 + \dots + c_k 
     \boldsymbol{v}_k = \boldsymbol{0}
     $$
 
-    is only true for \(c_1=c_2=\dots=c_k=0\). What does that actually mean? 
-    It means that we can't write any of the vectors \(\boldsymbol{v}_1,
-    \boldsymbol{v}_2,\dots \boldsymbol{v}_k\) as a linear combination of 
-    the others. If we could, then we would say that this set of vectors 
-    is linearly <i>dependent</i>.
+    only holds for \(c_1=c_2=\dots=c_k=0\). If, however, any of the 
+    vectors can be expressed as a non-trivial linear combination of the 
+    others, then the vectors are said to be linearly <i>dependent</i>.
   </p>
   <p>
-    Let's think about how this is relevant to understanding a transformation 
-    matrix \(A\).
+    Returning to our example, let's check whether the columns of \(A\) are 
+    linearly independent. To do this, we have to solve yet another system 
+    of equations. In particular, we want to know whether
+
+    $$
+    \begin{bmatrix}
+    1 & 1 & 1 \\
+    1 & -1 & 2 \\
+    2 & 0 & 3
+    \end{bmatrix}
+    \begin{bmatrix}
+    c_1 \\
+    c_2 \\
+    c_3
+    \end{bmatrix} = 
+    \begin{bmatrix}
+    0 \\
+    0 \\
+    0
+    \end{bmatrix},
+    $$
+
+    is solved only by \(c_1=c_2=c_3=0\). By definition, this would imply 
+    that the columns of \(A\) are linearly independent. Using Gaussian elimination, 
+    we found that
+
+    $$
+    \left[\begin{array}{rrr|r}
+    1 & 0 & \frac{3}{2} & 0 \\
+    0 & 1 & -\frac{1}{2} & 0 \\
+    0 & 0 & 0 & 0
+    \end{array}\right]
+    \implies
+
+    \begin{bmatrix}
+    c_1 \\
+    c_2 \\
+    c_3
+    \end{bmatrix} = t
+    \begin{bmatrix}
+    \frac{-3}{2} \\
+    \frac{1}{2} \\
+    1
+    \end{bmatrix}
+    $$
+
+    where \(t \in \mathbb{R}\). Therefore, we <i>do not</i> require
+    \(c_1=c_2=c_3=0\) to solve this system, and 
+    so the columns of \(A\) are linearly dependent. Looking at the 
+    columns of the reduced row echelon matrix, we can see that any column of
+    \(A\) can be obtained by a linear combination of the other two columns.
+  </p>
+  <p>
+    This brings us to our next key concept: span. While the columns of
+    \(A\) are vectors in \(\mathbb{R}^3\), the fact that each vector 
+    is obtained by a linear combination of the other two implies that the three 
+    vectors exist on a single two-dimensional plane in \(\mathbb{R}^3\).
+  </p>
+  <p>
+    Coming next: formal definition of span, basis, and eventually change of basis.
   </p>
 </body>
