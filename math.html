@@ -234,7 +234,7 @@
     $$
 
     only holds for \(c_1=c_2=\dots=c_k=0\). If, however, any of the 
-    vectors can be expressed as a non-trivial linear combination of the 
+    vectors can be expressed as a linear combination of the 
     others, then the vectors are said to be linearly <i>dependent</i>.
   </p>
   <p>
@@ -262,7 +262,7 @@
 
     is solved only by \(c_1=c_2=c_3=0\). By definition, this would imply 
     that the columns of \(A\) are linearly independent. Using Gaussian elimination, 
-    we found that
+    we found earlier that
 
     $$
     \left[\begin{array}{rrr|r}
@@ -286,25 +286,173 @@
 
     where \(t \in \mathbb{R}\). Therefore, we <i>do not</i> require
     \(c_1=c_2=c_3=0\) to solve this system, and 
-    so the columns of \(A\) are linearly dependent. Looking at the 
-    columns of the reduced row echelon matrix, we can see that any column of
-    \(A\) can be obtained by a linear combination of the other two columns.
+    so the columns of \(A\) are linearly dependent.
   </p>
   <p>
     This brings us to our next key concept: span. The span of a set of vectors 
-    \(\boldsymbol{v}_1,\boldsymbol{v}_2,\dots \boldsymbol{v}_k \in V\) is 
+    \(\boldsymbol{v}_1,\boldsymbol{v}_2,\dots \boldsymbol{v}_k \in V\), 
+    denoted \(\text{span}[\boldsymbol{v}_1,\boldsymbol{v}_2,\dots \boldsymbol{v}_k]\), is 
     simply the set of all linear combinations of those vectors. Imagine 
-    scaling and adding these vectors in every possible combination and 
-    try to visualize the geometries that they "sweep out."
+    scaling and adding these vectors every which way and think about the 
+    geometries that these linear combinations would "sweep out."
   </p>
   <p>
-    As we found out by putting \(A\) into reduced row echelon form, any of
-    its columns can be obtained via a linear combination of the other two.
-    Therefore, we can imagine that the three column vectors really exist 
-    on a single two-dimensional plane in \(\mathbb{R}^3\). In other words, 
-    the vectors <i>span</i> a two-dimensional plane.
+    Looking at the columns of the reduced row echelon version of \(A\), we 
+    can see that any column of \(A\) can be obtained by a linear combination 
+    of the other two columns. Therefore, we can imagine that the three column 
+    vectors exist on a single two-dimensional plane in \(\mathbb{R}^3\). In 
+    other words, the vectors <i>span</i> a two-dimensional plane.
   </p>
   <p>
-    Coming next: formal definition of basis, and eventually change of basis.
+    Another way to think about this is that there is a kind of "redundancy"
+    among these three vectors - if all three of them exist in the same 
+    2D plane, then we really only need two of them to span that 
+    plane. In particular, we can say that
+    $$
+    \text{span}\big[
+    \begin{bmatrix}
+    1 \\
+    1 \\
+    2
+    \end{bmatrix},
+    \begin{bmatrix}
+    1 \\
+    -1 \\
+    0
+    \end{bmatrix}
+    \big] = \text{span}\big[
+    \begin{bmatrix}
+    1 \\
+    1 \\
+    2
+    \end{bmatrix},
+    \begin{bmatrix}
+    1 \\
+    -1 \\
+    0
+    \end{bmatrix},
+    \begin{bmatrix}
+    1 \\
+    2 \\
+    3
+    \end{bmatrix}
+    \big],
+    $$
+    and that the two vectors on the left-hand side of this equality form 
+    a <i>basis</i> for the 2D plane that they span. In general, 
+    a basis of a vector space \(V\) is a set of linearly independent vectors 
+    that span \(V\). A basis is also called a <i>minimal generating set</i>
+    because it contains the minimum number of vectors required to reach any 
+    element in the set through linear combinations.
+  </p>
+  <p>
+    As we said earlier, \(\boldsymbol{e}_1=[1,0,0]^\top, \boldsymbol{e}_2=[0,1,0]^\top,
+    \boldsymbol{e}_3=[0,0,1]^\top \) are the standard basis vectors for 
+    \(\mathbb{R}^3\). Indeed, they are linearly independent and span 
+    the space. However, they are by no means the only \(\mathbb{R}^3\)
+    basis possible.
+  </p>
+  <p>
+    In fact, if you randomly pick three vectors in \(\mathbb{R}^3\) (i.e., 
+    you randomly select their coordinates), the three vectors will 
+    <i>almost surely</i> (yes, that is the technical term) be linearly 
+    independent and be a basis for \(\mathbb{R}^3\). Conversely, they 
+    will <i>almost never</i> just happen to lie in the same plane, 
+    or on the same line.
+  </p>
+  <p>
+    The standard basis vectors are important because they capture our 
+    implicit assumptions about the coordinate system we are working in. 
+    Consider the vector \([3,2]^\top \in \mathbb{R}^2\). Implicitly, we 
+    know that this vector can be drawn by connecting the origin to a 
+    point three units to the right and two units up, i.e.,
+    $$
+    \begin{bmatrix}
+    3 \\
+    2
+    \end{bmatrix} = 3
+    \begin{bmatrix}
+    1 \\
+    0
+    \end{bmatrix} + 2
+    \begin{bmatrix}
+    0 \\
+    1
+    \end{bmatrix}.
+    $$
+    In \(\mathbb{R}^2\), the standard basis vectors \(\boldsymbol{e}_1=[1,0]^\top, 
+    \boldsymbol{e}_2=[0,1]^\top\) define these units and directions and, 
+    by extension, the entire coordinate system.
+  </p>
+  <p>
+    But this coordinate system is arbitrary. Space has no intrinsic "grid,"
+    and another observer might choose two different standard basis vectors 
+    that are equally valid (so long as they are linearly independent). In 
+    other words, a basis simply provides a frame of reference with which 
+    to define coordinate vectors.
+  </p>
+  <p>
+    Let's say, for example, that your friend Chris decides to use two different 
+    vectors, \(\boldsymbol{b}_1\) and \(\boldsymbol{b}_2\), as his standard 
+    basis vectors. And let's say that in our coordinate system, these vectors 
+    have coordinates \(\boldsymbol{b}_1=[2,1]^\top, \boldsymbol{b}_2=[-1,1]^\top\). 
+    Then the vector that Chris thinks of as \([3,2]^\top\) will 
+    also be different from the vector that we think of.
+  </p>
+  <p>
+    To figure out what vector Chris thinks of in <i>our</i> coordinate system 
+    (using our basis vectors, rather than Chris's basis vectors), we simply need 
+    to compute
+    $$
+    3\boldsymbol{b}_1 + 2\boldsymbol{b}_2
+    = \begin{bmatrix}
+    3 \\
+    2 
+    \end{bmatrix}
+    \begin{bmatrix}
+    2 & -1 \\
+    1 & 1
+    \end{bmatrix},
+    $$
+    where \(\boldsymbol{b}_1\) and \(\boldsymbol{b}_2\) are Chris's basis vectors,
+    represented in our coordinate system. As a side note, it is important to 
+    remember that from Chris's perspective, \(\boldsymbol{b}_1, \boldsymbol{b}_2\)
+    have the coordiantes \([1,0]^\top, [0,1]^\top\), because that is how standard 
+    basis vectors are defined.
+  </p>
+  <p>
+    The way to think about this is that the vectors are 
+    fixed in space, and we are simply drawing different gridlines that 
+    change the coordinates used to represent those vectors. Just like we can use 
+    different languages to label the same object, we can use different coordinate
+    systems to represent the same vector.
+  </p>
+  <!-- <p>
+    To recap, we have taken the coordinates of a vector in Chris's system and 
+    found the vector represented by those same coordinates in our system. We can 
+    also do the reverse: 
+    UHHH I'm not so sure if that's the right way round, will have to check, but 
+    there are two directions to explain: 1. keeping the underyling vector the same 
+    and just translating between coodinates systems, and 2. keeping the coordinates 
+    the same and calculating what vector you get in the other coordinate system.
+    The vector represented by \([3,2]^\top \in \mathbb{R}^2\)
+    *also don't forget to say that the matrix-vector multiplication represents a 
+    linear transformation from one system to the other!
+    in our coordinate system will have different coordinates in Chris's system.
+    To find out what those coordinates are, 
+  </p> -->
+  <p>
+    Let's return to the question that motivated all these definitions: why 
+    did we get infinitely many solutions to our example equation \(A\boldsymbol{x}=
+    \boldsymbol{b}\)? Remember that the columns of \(A\) tell us where the 
+    standard basis vectors land after applying the linear transformation 
+    described by \(A\). Therefore, the standard basis vectors all land on 
+    a two-dimensional plane, along with every other vector in 
+    \(\mathbb{R}^3\). You can imagine that \(A\) "squashes" every vector in
+    \(\mathbb{R}^3\) down into a plane.
+  </p>
+  <p>
+    Up next: other important definitions including image, kernel, column space,
+    null space (and connection to previous concepts).
   </p>
 </body>
