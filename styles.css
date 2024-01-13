@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "Colfax Web";
   src: url("fonts/Colfax Web/Regular.woff");
   font-weight: 400;
@@ -30,6 +30,18 @@
        url('fonts/MoMA/SFMOMAText-Bold.otf') format("otf");
   font-weight: bold;
   font-style: normal;
+} */
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("https://fonts.gstatic.com/s/ebgaramond/v14/SlGUmQSNjdsmc35JDF1K5_8I2M1hdU4.woff") format('woff');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url("https://fonts.gstatic.com/s/ebgaramond/v14/SlGUmQSNjdsmc35JDF1K5_8I2M1hdU4.woff") format('woff');
+  font-weight: 600;
 }
 
 html {
@@ -37,7 +49,7 @@ html {
 }
 
 body {
-  font-family: 'Colfax Web', -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'EB Garamond', -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
 
@@ -58,11 +70,12 @@ h1, h2, h3 {
 
 h2 {
   margin-bottom: -10px;
+  font-size: 30px;
 }
 
 p {
-  font-family: "Colfax Web", sans-serif;
-  font-size: 15px;
+  font-family: "EB Garamond";
+  font-size: 18px;
   line-height: 145%;
 }
 
@@ -107,7 +120,7 @@ a:hover {
   color:#000;
   font-weight:600;
   letter-spacing:1px;
-  font-size:10px;
+  font-size:11px;
 }
 
 .button:hover {
@@ -142,17 +155,17 @@ a:hover {
 
 .profile-text > h1 {
   line-height: 0;
-  font-family: "SFMoMA", "San Francisco";
-  font-weight: bold;
+  font-family: "EB Garamond";
+  font-weight: 600;
   color: black;
-  font-size: 30px;
+  font-size: 36px;
   text-transform: none;
 }
 
 .profile-text > h3 {
   text-transform: uppercase;
   font-weight: 600;
-  font-size: 10pt;
+  font-size: 12pt;
   letter-spacing: 1px;
   margin-bottom: 10px;
 }
@@ -178,8 +191,8 @@ a:hover {
 }
 
 .pub {
-  font-family: -apple-system, BlinkMacSystemFont, 'Colfax Web', sans-serif;
-  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, 'EB Garamond';
+  font-weight: 600;
 }
 
 .project-container {
