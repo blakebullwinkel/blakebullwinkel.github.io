@@ -5,15 +5,13 @@
 }
 
 @font-face {
-  font-family: "EB Garamond";
-  src: url("https://fonts.gstatic.com/s/ebgaramond/v14/SlGUmQSNjdsmc35JDF1K5_8I2M1hdU4.woff") format('woff');
-  font-weight: 400;
+  font-family: "EBGaramond-Regular";
+  src: url('fonts/EBGaramond-Regular.ttf') format("truetype"),
 }
 
 @font-face {
-  font-family: "EB Garamond";
-  src: url("https://fonts.gstatic.com/s/ebgaramond/v14/SlGUmQSNjdsmc35JDF1K5_8I2M1hdU4.woff") format('woff');
-  font-weight: 600;
+  font-family: "EBGaramond-SemiBold";
+  src: url('fonts/EBGaramond-SemiBold.ttf') format("truetype"),
 }
 
 html {
@@ -21,7 +19,7 @@ html {
 }
 
 body {
-  font-family: 'EB Garamond', -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'EBGaramond-Regular';
   line-height: 1.5;
   text-rendering: optimizeLegibility;
 
@@ -46,7 +44,7 @@ h2 {
 }
 
 p {
-  font-family: "EB Garamond";
+  font-family: 'EBGaramond-Regular';
   font-size: 18px;
   line-height: 145%;
 }
@@ -128,8 +126,8 @@ a:hover {
 
 .profile-text > h1 {
   line-height: 0;
-  font-family: "EB Garamond";
-  font-weight: 400;
+  font-family: "EBGaramond-Regular";
+  font-weight: 500;
   color: black;
   font-size: 36px;
   text-transform: none;
@@ -164,8 +162,7 @@ a:hover {
 }
 
 .pub {
-  font-family: -apple-system, BlinkMacSystemFont, 'EB Garamond';
-  font-weight: 600;
+  font-family: 'EBGaramond-SemiBold';
 }
 
 .project-container {
@@ -202,43 +199,3 @@ a:hover {
     padding-left: 20px;
   }
 }
-
-/* @media (prefers-color-scheme: dark) { */
-  /* The following was 99% written by GitHub Copilot. */
-  /* body {
-    background: #222;
-    color: #fff;
-  }
-
-  a {
-    color: #3498db;
-  }
-
-  .profile-text > h1 {
-    color: #fff;
-  }
-
-  .button {
-    background-color: rgba(255,255,255,0.05);
-    color: #fff;
-  }
-
-  .button:hover {
-    background-color: rgba(255,255,255,0.08);
-    color: #fff;
-  }
-
-  .social > a > img {
-    filter: opacity(100%);
-    -webkit-filter: opacity(100%);
-    filter: invert(100%);
-    -webkit-filter: invert(100%);
-  }
-
-  .social > a > img:hover {
-    filter: opacity(50%);
-    -webkit-filter: opacity(50%);
-    filter: invert(50%);
-    -webkit-filter: invert(50%);
-  }
-} */
