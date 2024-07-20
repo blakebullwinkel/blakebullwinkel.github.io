@@ -1,36 +1,8 @@
-/* @font-face {
-  font-family: "Colfax Web";
-  src: url("fonts/Colfax Web/Regular.woff");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Colfax Web";
-  src: url("fonts/Colfax Web/RegularItalic.woff");
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Colfax Web";
-  src: url("fonts/Colfax Web/Bold.woff");
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: "Colfax Web";
-  src: url("fonts/Colfax Web/BoldItalic.woff");
-  font-weight: 700;
-  font-style: italic;
-}
-
 @font-face {
   font-family: "SFMoMA";
-  src: url('fonts/MoMA/SFMOMAText-Bold.ttf') format("truetype"),
-       url('fonts/MoMA/SFMOMAText-Bold.otf') format("otf");
-  font-weight: bold;
-  font-style: normal;
-} */
+  src: url('fonts/SFMOMADisplay-Light.ttf') format("truetype"),
+       url('fonts/SFMOMADisplay-Light.otf') format("otf");
+}
 
 @font-face {
   font-family: "EB Garamond";
@@ -118,7 +90,8 @@ a:hover {
   text-transform:uppercase;
   text-decoration:none;
   color:#000;
-  font-weight:600;
+  font-family:'SFMoMA';
+  font-weight:500;
   letter-spacing:1px;
   font-size:11px;
 }
