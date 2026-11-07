@@ -1,0 +1,74 @@
+:root {
+  color-scheme: dark;
+  --page-background: #161a20;
+  --text-color: #dededb;
+  --heading-color: #f5f2eb;
+  --muted-color: #a9b1bb;
+  --link-color: #91c7eb;
+  --link-hover-color: #f0b89b;
+  --surface-color: #232b35;
+  --surface-hover-color: #303d4b;
+  --border-color: #414d5c;
+  --icon-filter: invert(1);
+  background-color: var(--page-background);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --page-background: #fff;
+  --text-color: #222;
+  --heading-color: #000;
+  --muted-color: #626b75;
+  --link-color: #0f73aa;
+  --link-hover-color: #c0392b;
+  --surface-color: #f2f2f2;
+  --surface-hover-color: #ebebeb;
+  --border-color: #cbd1d7;
+  --icon-filter: none;
+}
+
+body {
+  background-color: var(--page-background);
+  color: var(--text-color);
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  background-color: var(--surface-color);
+  color: var(--heading-color);
+  cursor: pointer;
+  transition: background-color .15s linear, border-color .15s linear;
+}
+
+.theme-toggle[hidden], .theme-icon-moon {
+  display: none;
+}
+
+.theme-toggle:hover {
+  border-color: var(--link-color);
+  background-color: var(--surface-hover-color);
+}
+
+.theme-toggle:focus-visible, a:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 4px;
+}
+
+:root[data-theme="light"] .theme-icon-sun {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-icon-moon {
+  display: block;
+}

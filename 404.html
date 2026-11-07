@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <title>404 - Blake Bullwinkel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="dark light">
+    <link rel="stylesheet" href="/theme.css">
+    <script src="/theme.js"></script>
     <!-- <link rel="icon" type="image/png" href="/img/favicon.png"> -->
     <style>
     html, body {
@@ -13,7 +15,7 @@
     }
 
     #hero {
-        background: white;
+        background: var(--page-background);
         background-size:cover;
         position:relative;
         height:100vh;
@@ -24,6 +26,7 @@
         margin-left: auto;
         margin-right: auto;
         height: 100px;
+        filter: var(--icon-filter);
     }
 
     .header {
@@ -31,7 +34,7 @@
         top:45%;
         text-align:center;
         width:100%;
-        color:#333;
+        color:var(--text-color);
         -ms-transform: translate(0,-45%); /* IE 9 */
         -webkit-transform: translate(0,-45%); /* Safari */
         transform: translate(0,-45%);
@@ -48,15 +51,15 @@
 
     a {
         text-decoration: none;
-        color: #2980b9;
+        color: var(--link-color);
     }
 
     a:visited {
-        color: #2980b9;
+        color: var(--link-color);
     }
 
     a:hover {
-        color: #c0392b;
+        color: var(--link-hover-color);
     }
 
     p {
@@ -73,11 +76,21 @@
     </style>
 </head>
 <body>
+    <button class="theme-toggle" type="button" aria-label="Switch to light mode" hidden>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <g class="theme-icon-sun">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"></path>
+            </g>
+            <path class="theme-icon-moon" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
+        </svg>
+    </button>
+
     <div id="wrapper" style="width: 100%;">
         <div id="hero">
             <div class="header">
                 <!-- Image by Becris from Noun Project -->
-                <img src="static/404.png" />
+                <img src="/static/404.png" alt="404" />
                 <center>
                     <p class="lead">
                         Oops. 404.<br /><br />
